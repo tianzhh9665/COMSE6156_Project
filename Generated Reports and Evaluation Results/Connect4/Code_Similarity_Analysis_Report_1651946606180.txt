@@ -1,0 +1,6 @@
+Code Similarity Analysis Report
+
+Scanned Project Path: /home/th2888/cs6156/SANGRIA/Connect4/
+
+Code Similarity Found Summary:
+

@@ -1,0 +1,88 @@
+Code Similarity Analysis Report
+
+Scanned Project Path: /home/th2888/cs6156/SANGRIA/CULift/
+
+Code Similarity Found Summary:
+
+Number of files tested: 61 
+Number of reference files: 61 
+Test files above display threshold: 4 (6.56%)
+
+1).
+Test file: /home/th2888/cs6156/SANGRIA/CULift/.git/logs/HEAD (97.99%) 
+Reference file: /home/th2888/cs6156/SANGRIA/CULift/.git/logs/refs/heads/main (97.99%) 
+Token overlap: 195 
+
+Similar Code Snippet: 
+
+0000000000000000000000000000000000000000 0ee36f8980ec2023070d1d3ec1d9ca067ce73ad1 Tianzhi Huang <th2888@columbia.edu> 1651943961 -0400	clone: from https://github.com/tianzhh9665/COMS4170_Project.
+
+
+0000000000000000000000000000000000000000 0ee36f8980ec2023070d1d3ec1d9ca067ce73ad1 Tianzhi Huang <th2888@columbia.edu> 1651943961 -0400	clone: from https://github.com/tianzhh9665/COMS4170_Project.
+
+2).
+Test file: /home/th2888/cs6156/SANGRIA/CULift/.git/logs/HEAD (97.99%) 
+Reference file: /home/th2888/cs6156/SANGRIA/CULift/.git/logs/refs/remotes/origin/HEAD (97.99%) 
+Token overlap: 195 
+
+Similar Code Snippet: 
+
+0000000000000000000000000000000000000000 0ee36f8980ec2023070d1d3ec1d9ca067ce73ad1 Tianzhi Huang <th2888@columbia.edu> 1651943961 -0400	clone: from https://github.com/tianzhh9665/COMS4170_Project.
+
+
+0000000000000000000000000000000000000000 0ee36f8980ec2023070d1d3ec1d9ca067ce73ad1 Tianzhi Huang <th2888@columbia.edu> 1651943961 -0400	clone: from https://github.com/tianzhh9665/COMS4170_Project.
+
+3).
+Test file: /home/th2888/cs6156/SANGRIA/CULift/.git/logs/refs/heads/main (97.99%) 
+Reference file: /home/th2888/cs6156/SANGRIA/CULift/.git/logs/refs/remotes/origin/HEAD (97.99%) 
+Token overlap: 195 
+
+Similar Code Snippet: 
+
+0000000000000000000000000000000000000000 0ee36f8980ec2023070d1d3ec1d9ca067ce73ad1 Tianzhi Huang <th2888@columbia.edu> 1651943961 -0400	clone: from https://github.com/tianzhh9665/COMS4170_Project.
+
+
+0000000000000000000000000000000000000000 0ee36f8980ec2023070d1d3ec1d9ca067ce73ad1 Tianzhi Huang <th2888@columbia.edu> 1651943961 -0400	clone: from https://github.com/tianzhh9665/COMS4170_Project.
+
+4).
+Test file: /home/th2888/cs6156/SANGRIA/CULift/templates/review.html (95.65%) 
+Reference file: /home/th2888/cs6156/SANGRIA/CULift/templates/lesson.html (17.10%) 
+Token overlap: 66 
+
+Similar Code Snippet: 
+
+<style>
+
+</style>
+<script type="text/javascript" src="{{ url_for('static', filename = 'review.js') }}"></script>
+
+<
+
+
+<style>
+
+</style>
+<script type="text/javascript" src="{{ url_for('static', filename = 'lesson.js') }}"></script>
+
+<
+
+5).
+Test file: /home/th2888/cs6156/SANGRIA/CULift/templates/review.html (95.65%) 
+Reference file: /home/th2888/cs6156/SANGRIA/CULift/templates/welcome.html (28.09%) 
+Token overlap: 66 
+
+Similar Code Snippet: 
+
+iv class="container-fluid ">    
+    <div class='row' id='reviewCont'>
+
+    </div>
+</di
+
+
+iv class='row justify-content-md-center'>
+        <div class="col-md-auto" id="lessonTitle">
+
+        </div>
+    </di
+

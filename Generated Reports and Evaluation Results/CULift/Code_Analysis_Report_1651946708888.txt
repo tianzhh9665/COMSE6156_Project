@@ -1,0 +1,79 @@
+Java Project Code Static Analysis Result 
+
+Scanned Project Path: /home/th2888/cs6156/SANGRIA/CULift/
+
+Code Threat and Vulnerabilities Found Summary: 
+
+4).Secrets Audit: 
+total    0
+high    0
+critical    0
+low    0
+medium    0
+
+4).Secrets Audit: 
+total    5
+high    0
+critical    0
+low    1
+medium    4
+
+
+Found Vulnerabilities Detail Information: 
+
+4).Secrets Audit: 
+
+None
+
+4).Secrets Audit: 
+
+1.Issue Details: 
+
+Possibility for Cross-site scripting (XSS) when the http data at `id in server.py:139` is returned to the user via `server.py:145` without sanitization.
+
+File Location: file:///home/th2888/cs6156/SANGRIA/CULift/server.py
+At Line 139, code content: def lesson(id=None):
+
+Issue Level: null
+Issue Severity: MEDIUM
+
+2.Issue Details: 
+
+Possibility for Cross-site scripting (XSS) when the http data at `id in server.py:155` is returned to the user via `server.py:164` without sanitization.
+
+File Location: file:///home/th2888/cs6156/SANGRIA/CULift/server.py
+At Line 155, code content: def quiz(id=None):
+
+Issue Level: null
+Issue Severity: MEDIUM
+
+3.Issue Details: 
+
+Security Misconfiguration with the config `PREFERRED_URL_SCHEME` not set to the recommended value `https` for production use.
+
+File Location: file:///home/th2888/cs6156/SANGRIA/CULift/server.py
+At Line 1, code content: from flask import Flask
+
+Issue Level: null
+Issue Severity: MEDIUM
+
+4.Issue Details: 
+
+Security Misconfiguration with the config `SESSION_COOKIE_SECURE` not set to the recommended value `True` for production use.
+
+File Location: file:///home/th2888/cs6156/SANGRIA/CULift/server.py
+At Line 1, code content: from flask import Flask
+
+Issue Level: null
+Issue Severity: MEDIUM
+
+5.Issue Details: 
+
+Consider adding Flask-Security and Flask-Talisman security extensions to your Flask apps.
+
+File Location: file:///home/th2888/cs6156/SANGRIA/CULift/server.py
+At Line 1, code content: from flask import Flask
+
+Issue Level: note
+Issue Severity: LOW
+

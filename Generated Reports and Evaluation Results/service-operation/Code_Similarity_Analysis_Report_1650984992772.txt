@@ -1,0 +1,1520 @@
+Code Similarity Analysis Report
+
+Scanned Project Path: /home/th2888/cs6156/SANGRIA/service-operation/
+
+Code Similarity Found Summary:
+
+Number of files tested: 154 
+Number of reference files: 154 
+Test files above display threshold: 17 (11.04%)
+
+1).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/resources/application.yml (99.61%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/target/classes/application.yml (99.61%) 
+Token overlap: 254 
+
+Similar Code Snippet: 
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: service-operation
+    
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:com/sangria/operation/mapper/*Mapper.xml
+  type-aliases-package: com.sangria.operation.entit
+
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: service-operation
+    
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:com/sangria/operation/mapper/*Mapper.xml
+  type-aliases-package: com.sangria.operation.entit
+
+2).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/resources/application-dev.yml (99.37%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/target/classes/application-dev.yml (99.37%) 
+Token overlap: 313 
+
+Similar Code Snippet: 
+
+server:
+  port: 8092
+  servlet:
+    context-path: /operation
+
+#database
+spring:
+  datasource:
+    username: sangria
+    password: sangria
+    url: jdbc:mysql://35.196.112.19:3306/comsw4156?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+
+#sql log
+logging:
+  file:
+    path: ./logs
+  level:
+    com:
+      sangria:
+        auth:
+          mapper : deb
+
+
+server:
+  port: 8092
+  servlet:
+    context-path: /operation
+
+#database
+spring:
+  datasource:
+    username: sangria
+    password: sangria
+    url: jdbc:mysql://35.196.112.19:3306/comsw4156?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+
+#sql log
+logging:
+  file:
+    path: ./logs
+  level:
+    com:
+      sangria:
+        auth:
+          mapper : deb
+
+3).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/Enum/ItemTypeEnum.java (98.76%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/Enum/PlayerTradeTypeEnum.java (98.76%) 
+Token overlap: 159 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.Enum;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public enum ItemTypeEnum {
+	
+	COM_AND_TRA(1, "compostable & tradable"),
+	
+	COM_AND_NOT_TRA(2, "compostable & NOT tradable"),
+	
+	NOT_COM_AND_TRA(3, " NOT compostable & tradable"),
+	
+	NOT_COM_AND_NOT_TRA(4, " NOT compostable & NOT tradable");
+	
+	int type;
+
+    String message
+
+
+package com.sangria.operation.Enum;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public enum PlayerTradeTypeEnum {
+
+	MONEY_TO_MONEY(1, "player 1 money to player 2 money"),
+	MONEY_TO_ITEM(2, "player 1 money to player 2 item"),
+	ITEM_TO_MONEY(3, "player 1 item to player 2 money"),
+	ITEM_TO_ITEM(4, "player 1 item to player 2 item");
+	
+	int type;
+	String message
+
+4).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryClearDTO.java (93.42%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryClearDTO {
+	
+	String token
+
+5).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryInfoReturnDTO.java (50.00%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import
+
+6).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemAddDTO.java (65.22%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+port lombok.Data;
+
+@Data
+public class InventoryInfoReturnDTO {
+	
+	String inventoryId
+
+7).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemMakeDTO.java (86.59%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import
+
+8).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerAddDTO.java (93.42%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+port lombok.Data;
+
+@Data
+public class ItemAddDTO {
+	
+	String token
+
+9).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerAddMoneyDTO.java (89.87%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class ItemMakeDTO {
+	
+	String playerUuid
+
+10).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerBuyItemSysDTO.java (86.59%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerAddDTO {
+
+	String inventoryUuid
+
+11).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerDeleteDTO.java (93.42%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerAddMoneyDTO {
+
+    String token
+
+12).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerFreezeDTO.java (93.42%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerBuyItemSysDTO {
+
+    String token
+
+13).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerInfoReturnDTO.java (65.22%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerDeleteDTO {
+
+    String token
+
+14).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerItemDTO.java (86.59%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerFreezeDTO {
+
+    String token
+
+15).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerRemoveMoneyDTO.java (89.87%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import
+
+16).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerSellItemSysDTO.java (86.59%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+port lombok.Data;
+
+@Data
+public class PlayerInfoReturnDTO {
+	
+	String uuid
+
+17).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerTradeRequestDTO.java (61.98%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerItemDTO {
+
+    String token
+
+18).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/InventoryAddDTO.java (97.26%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerUnfreezeDTO.java (93.42%) 
+Token overlap: 71 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class InventoryAddDTO {
+	
+	String token
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerRemoveMoneyDTO {
+
+    String token
+
+19).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dao/PlayerMapper.java (97.00%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dao/PlayerInventoryMapper.java (93.84%) 
+Token overlap: 259 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dao;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.sangria.operation.entity.Play
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerSellItemSysDTO {
+
+    String token
+
+20).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemAddDTO.java (96.52%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerTradeRequestDTO.java (91.74%) 
+Token overlap: 111 
+
+Similar Code Snippet: 
+
+O;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
+
+@Mapper
+@Component
+public interface PlayerMapper extends BaseMapper
+
+
+package com.sangria.operation.dto;
+
+import
+
+21).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemMakeDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemAddDTO.java (72.17%) 
+Token overlap: 83 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class ItemAddDTO {
+	
+	String token;
+	String inventoryId;
+	String name;
+	Integer type;
+	Integer price;
+	List<List> ingredients;
+
+
+port lombok.Data;
+
+@Data
+public class PlayerTradeRequestDTO {
+
+	Integer type
+
+22).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemMakeDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerBuyItemSysDTO.java (96.34%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class ItemMakeDTO {
+	
+	String playerUuid;
+	String itemUuid;
+	Integer amount;
+	String
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerUnfreezeDTO {
+
+    String token
+
+23).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemMakeDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerInfoReturnDTO.java (72.17%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class ItemMakeDTO {
+	
+	String playerUuid;
+	String itemUuid;
+	Integer amount;
+	String
+
+
+package com.sangria.operation.dao;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.sangria.operation.entity.Play
+
+24).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemMakeDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerItemDTO.java (96.34%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class ItemMakeDTO {
+	
+	String playerUuid;
+	String itemUuid;
+	Integer amount;
+	String
+
+
+O;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
+
+@Mapper
+@Component
+public interface PlayerInventoryMapper extends BaseMapper
+
+25).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemMakeDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerSellItemSysDTO.java (96.34%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class ItemMakeDTO {
+	
+	String playerUuid;
+	String itemUuid;
+	Integer amount;
+	String
+
+
+package com.sangria.operation.dto;
+
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class PlayerTradeRequestDTO {
+
+	Integer type;
+	String player1Uuid;
+	Integer player1Amount;
+	String player2Uuid;
+	Integer player2Amount;
+	List<List> player1ItemList;
+
+26).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemMakeDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerTradeRequestDTO.java (68.60%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class ItemMakeDTO {
+	
+	String playerUuid;
+	String itemUuid;
+	Integer amount;
+	String
+
+
+package com.sangria.operation.dto;
+
+import
+
+27).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerBuyItemSysDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemAddDTO.java (72.17%) 
+Token overlap: 83 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class ItemMakeDTO {
+	
+	String playerUuid;
+	String itemUuid;
+	Integer amount;
+	String
+
+
+port lombok.Data;
+
+@Data
+public class ItemAddDTO {
+	
+	String token;
+	String inventoryId;
+	String name;
+	Integer
+
+28).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerBuyItemSysDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerInfoReturnDTO.java (72.17%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerBuyItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerBuyItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+29).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerBuyItemSysDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerItemDTO.java (96.34%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerBuyItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import
+
+30).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerBuyItemSysDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerSellItemSysDTO.java (96.34%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerBuyItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+port lombok.Data;
+
+@Data
+public class PlayerInfoReturnDTO {
+	
+	String uuid;
+	String gameUuid;
+	String gameInventoryUuid;
+	Integer
+
+31).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerBuyItemSysDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerTradeRequestDTO.java (68.60%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerBuyItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerItemDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+32).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerItemDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemAddDTO.java (72.17%) 
+Token overlap: 83 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerBuyItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerSellItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+33).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerItemDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerInfoReturnDTO.java (72.17%) 
+Token overlap: 83 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerItemDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import
+
+34).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerItemDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerSellItemSysDTO.java (96.34%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerItemDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+port lombok.Data;
+
+@Data
+public class PlayerTradeRequestDTO {
+
+	Integer type;
+	String player1Uuid;
+	Integer player1Amount;
+	String
+
+35).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerItemDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerTradeRequestDTO.java (68.60%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerItemDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import
+
+36).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerSellItemSysDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemAddDTO.java (72.17%) 
+Token overlap: 83 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerItemDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+port lombok.Data;
+
+@Data
+public class ItemAddDTO {
+	
+	String token;
+	String inventoryId;
+	String name;
+	Integer
+
+37).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerSellItemSysDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerInfoReturnDTO.java (72.17%) 
+Token overlap: 83 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerSellItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import
+
+38).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerSellItemSysDTO.java (96.34%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerTradeRequestDTO.java (68.60%) 
+Token overlap: 79 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerSellItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+port lombok.Data;
+
+@Data
+public class PlayerInfoReturnDTO {
+	
+	String uuid;
+	String gameUuid;
+	String gameInventoryUuid;
+	Integer
+
+39).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dao/GameMapper.java (96.23%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dao/GameManagerMapper.java (93.75%) 
+Token overlap: 255 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerSellItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerItemDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+40).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerAddMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemAddDTO.java (69.57%) 
+Token overlap: 80 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dao;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.sangria.operation.entity.Ga
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerSellItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+41).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerAddMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemMakeDTO.java (92.68%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+@Mapper
+@Component
+public interface GameMapper extends BaseMapper
+
+
+package com.sangria.operation.dto;
+
+import
+
+42).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerAddMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerBuyItemSysDTO.java (92.68%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerAddMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+port lombok.Data;
+
+@Data
+public class PlayerTradeRequestDTO {
+
+	Integer type;
+	String player1Uuid;
+	Integer player1Amount;
+	String
+
+43).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerAddMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerInfoReturnDTO.java (69.57%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerAddMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import
+
+44).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerAddMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerItemDTO.java (92.68%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerAddMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+port lombok.Data;
+
+@Data
+public class ItemAddDTO {
+	
+	String token;
+	String inventoryId;
+	String name;
+	Integer
+
+45).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerAddMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerRemoveMoneyDTO.java (96.20%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerAddMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import
+
+46).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerAddMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerSellItemSysDTO.java (92.68%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerAddMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+port lombok.Data;
+
+@Data
+public class PlayerInfoReturnDTO {
+	
+	String uuid;
+	String gameUuid;
+	String gameInventoryUuid;
+	Integer
+
+47).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerAddMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerTradeRequestDTO.java (66.12%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerAddMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerSellItemSysDTO {
+
+    String token;
+    String playerUuid;
+    String itemUuid;
+    Integer
+
+48).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerRemoveMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemAddDTO.java (69.57%) 
+Token overlap: 80 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerAddMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import
+
+49).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerRemoveMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/ItemMakeDTO.java (92.68%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerAddMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+port lombok.Data;
+
+@Data
+public class PlayerTradeRequestDTO {
+
+	Integer type;
+	String player1Uuid;
+	Integer player1Amount;
+	String
+
+50).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerRemoveMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerBuyItemSysDTO.java (92.68%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerRemoveMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import
+
+51).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerRemoveMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerInfoReturnDTO.java (69.57%) 
+Token overlap: 80 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerRemoveMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+port lombok.Data;
+
+@Data
+public class ItemAddDTO {
+	
+	String token;
+	String inventoryId;
+	String name;
+	Integer
+
+52).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerRemoveMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerItemDTO.java (92.68%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerRemoveMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import
+
+53).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerRemoveMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerSellItemSysDTO.java (92.68%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerRemoveMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+port lombok.Data;
+
+@Data
+public class PlayerInfoReturnDTO {
+	
+	String uuid;
+	String gameUuid;
+	String gameInventoryUuid;
+	Integer
+
+54).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerRemoveMoneyDTO.java (96.20%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dto/PlayerTradeRequestDTO.java (66.12%) 
+Token overlap: 76 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerRemoveMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+package com.sangria.operation.dto;
+
+import
+
+55).
+Test file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dao/ItemMapper.java (95.85%) 
+Reference file: /home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/dao/InventoryMapper.java (94.07%) 
+Token overlap: 254 
+
+Similar Code Snippet: 
+
+package com.sangria.operation.dto;
+
+import lombok.Data;
+
+@Data
+public class PlayerRemoveMoneyDTO {
+
+    String token;
+    String playerUuid;
+    Integer
+
+
+port lombok.Data;
+
+@Data
+public class PlayerTradeRequestDTO {
+
+	Integer type;
+	String player1Uuid;
+	Integer player1Amount;
+	String
+

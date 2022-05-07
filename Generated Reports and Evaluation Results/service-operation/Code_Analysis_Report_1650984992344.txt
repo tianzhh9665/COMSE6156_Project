@@ -1,0 +1,110 @@
+Java Project Code Static Analysis Result 
+
+Scanned Project Path: /home/th2888/cs6156/SANGRIA/service-operation/
+
+Code Threat and Vulnerabilities Found Summary: 
+
+1).Source File Result: 
+total    0
+high    0
+critical    0
+low    0
+medium    0
+
+2).Infrastructure Security: 
+total    0
+high    0
+critical    0
+low    0
+medium    0
+
+3).Class File Result: 
+total    4
+high    2
+critical    2
+low    0
+medium    0
+
+4).Secrets Audit: 
+total    0
+high    0
+critical    0
+low    0
+medium    0
+
+
+Found Vulnerabilities Detail Information: 
+
+1).Source File Result: 
+
+None
+
+2).Infrastructure Security: 
+
+None
+
+3).Class File Result: 
+
+1.Issue Details: 
+
+This random generator (java.util.Random) is predictable 
+At CommonUtils.java:[lines 12-52] 
+In class com.sangria.operation.utils.CommonUtils 
+In method com.sangria.operation.utils.CommonUtils.generateUniqueId(String, int) 
+At CommonUtils.java:[line 40] 
+Value java.util.Random.
+
+File Location: file:///home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/utils/CommonUtils.java
+At Line 40, code content:     		int randomInt = new Random().nextInt(20);
+
+Issue Level: error
+Issue Severity: HIGH
+
+2.Issue Details: 
+
+Leading zeros are omitted in the concatenation increasing collision potential 
+At MD5Utils.java:[lines 6-58] 
+In class com.sangria.operation.utils.MD5Utils 
+In method com.sangria.operation.utils.MD5Utils.getMD5Str(String) 
+At MD5Utils.java:[lines 35-58].
+
+File Location: file:///home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/utils/MD5Utils.java
+At Line 35, code content: 	        MessageDigest md5 = null;
+
+Issue Level: error
+Issue Severity: HIGH
+
+3.Issue Details: 
+
+This API MD5 (MDX) is not a recommended cryptographic hash function 
+At MD5Utils.java:[lines 6-58] 
+In class com.sangria.operation.utils.MD5Utils 
+In method com.sangria.operation.utils.MD5Utils.getMD5(String) 
+At MD5Utils.java:[line 13] 
+Value MD5.
+
+File Location: file:///home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/utils/MD5Utils.java
+At Line 13, code content: 	            MessageDigest md = MessageDigest.getInstance("MD5");
+
+Issue Level: error
+Issue Severity: CRITICAL
+
+4.Issue Details: 
+
+This API MD5 (MDX) is not a recommended cryptographic hash function 
+At MD5Utils.java:[lines 6-58] 
+In class com.sangria.operation.utils.MD5Utils 
+In method com.sangria.operation.utils.MD5Utils.getMD5Str(String) 
+At MD5Utils.java:[line 37] 
+Value MD5.
+
+File Location: file:///home/th2888/cs6156/SANGRIA/service-operation/src/main/java/com/sangria/operation/utils/MD5Utils.java
+At Line 37, code content: 	            md5 = MessageDigest.getInstance("MD5");
+
+Issue Level: error
+Issue Severity: CRITICAL
+
+4).Secrets Audit: 
+
+None
+

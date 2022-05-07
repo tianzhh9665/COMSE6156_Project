@@ -1,0 +1,137 @@
+{
+  "generated_at": "2022-05-07T22:14:58Z",
+  "vulnerabilities": [
+    {
+      "rule_id": "taint-basic-xss",
+      "rule_name": "Potential XSS",
+      "severity": "MEDIUM",
+      "cwe_category": "CWE-80",
+      "owasp_category": "a7-xss",
+      "source": {
+        "label": "id",
+        "line_number": 139,
+        "path": "/app/server.py"
+      },
+      "source_trigger_word": "Framework function URL parameter",
+      "source_label": "id",
+      "source_type": "Framework_Parameter",
+      "sink": {
+        "label": "~call_1 = ret_flask.render_template(lesson.html, lesson=lesson, lesson_pics=lesson_pics)",
+        "line_number": 145,
+        "path": "/app/server.py"
+      },
+      "sink_trigger_word": "render_template(",
+      "sink_label": "~call_1 = ret_flask.render_template(lesson.html, lesson=lesson, lesson_pics=lesson_pics)",
+      "sink_type": "ReturnedToUser",
+      "type": "Vulnerability",
+      "reassignment_nodes": [
+        {
+          "label": "lesson = lesson_data[str(id)]",
+          "line_number": 142,
+          "path": "/app/server.py"
+        }
+      ],
+      "description": "Possibility for Cross-site scripting (XSS) when the http data at `id in server.py:139` is returned to the user via `server.py:145` without sanitization.",
+      "short_description": "Possibility for Cross-site scripting (XSS) when the http data at `id in server.py:139` is returned to the user via `server.py:145` without sanitization."
+    },
+    {
+      "rule_id": "taint-basic-xss",
+      "rule_name": "Potential XSS",
+      "severity": "MEDIUM",
+      "cwe_category": "CWE-80",
+      "owasp_category": "a7-xss",
+      "source": {
+        "label": "id",
+        "line_number": 155,
+        "path": "/app/server.py"
+      },
+      "source_trigger_word": "Framework function URL parameter",
+      "source_label": "id",
+      "source_type": "Framework_Parameter",
+      "sink": {
+        "label": "~call_2 = ret_flask.render_template(quiz.html, quiz=quiz, total=total)",
+        "line_number": 164,
+        "path": "/app/server.py"
+      },
+      "sink_trigger_word": "render_template(",
+      "sink_label": "~call_2 = ret_flask.render_template(quiz.html, quiz=quiz, total=total)",
+      "sink_type": "ReturnedToUser",
+      "type": "Vulnerability",
+      "reassignment_nodes": [
+        {
+          "label": "quiz = quiz_data[str(id)]",
+          "line_number": 161,
+          "path": "/app/server.py"
+        }
+      ],
+      "description": "Possibility for Cross-site scripting (XSS) when the http data at `id in server.py:155` is returned to the user via `server.py:164` without sanitization.",
+      "short_description": "Possibility for Cross-site scripting (XSS) when the http data at `id in server.py:155` is returned to the user via `server.py:164` without sanitization."
+    },
+    {
+      "rule_id": "flask-misconfiguration-recommended",
+      "rule_name": "Security Misconfiguration",
+      "short_description": "Security Misconfiguration with the config `PREFERRED_URL_SCHEME` not set to the recommended value `https` for production use",
+      "description": "Security Misconfiguration with the config `PREFERRED_URL_SCHEME` not set to the recommended value `https` for production use",
+      "recommendation": "Flask application is not configured correctly for deployment to production and live environments. Default settings that are more appropriate for development environment are in use.\n\nNOTE: Some recommended settings may have to be set for every route even when using blueprint design pattern.\n\n## Additional information\n\n**[OWASP-A6](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A6-Security_Misconfiguration)**\n\n**[Flask Security](https://flask-security.readthedocs.io/en/develop/configuration.html)**\n\n**[Flask Security Considerations](https://flask.palletsprojects.com/en/1.1.x/security/#security-considerations)**\n\n**[Flask Configuration](https://flask.palletsprojects.com/en/1.1.x/api/#configuration)**\n",
+      "cwe_category": "CWE-732",
+      "owasp_category": "a6-misconfiguration",
+      "severity": "MEDIUM",
+      "source": {
+        "trigger_word": "PREFERRED_URL_SCHEME",
+        "line_number": 1,
+        "label": "PREFERRED_URL_SCHEME",
+        "path": "/app/server.py"
+      },
+      "sink": {
+        "trigger_word": "http",
+        "line_number": 1,
+        "label": "http",
+        "path": "/app/server.py"
+      }
+    },
+    {
+      "rule_id": "flask-misconfiguration-recommended",
+      "rule_name": "Security Misconfiguration",
+      "short_description": "Security Misconfiguration with the config `SESSION_COOKIE_SECURE` not set to the recommended value `True` for production use",
+      "description": "Security Misconfiguration with the config `SESSION_COOKIE_SECURE` not set to the recommended value `True` for production use",
+      "recommendation": "Flask application is not configured correctly for deployment to production and live environments. Default settings that are more appropriate for development environment are in use.\n\nNOTE: Some recommended settings may have to be set for every route even when using blueprint design pattern.\n\n## Additional information\n\n**[OWASP-A6](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A6-Security_Misconfiguration)**\n\n**[Flask Security](https://flask-security.readthedocs.io/en/develop/configuration.html)**\n\n**[Flask Security Considerations](https://flask.palletsprojects.com/en/1.1.x/security/#security-considerations)**\n\n**[Flask Configuration](https://flask.palletsprojects.com/en/1.1.x/api/#configuration)**\n",
+      "cwe_category": "CWE-732",
+      "owasp_category": "a6-misconfiguration",
+      "severity": "MEDIUM",
+      "source": {
+        "trigger_word": "SESSION_COOKIE_SECURE",
+        "line_number": 1,
+        "label": "SESSION_COOKIE_SECURE",
+        "path": "/app/server.py"
+      },
+      "sink": {
+        "trigger_word": null,
+        "line_number": 1,
+        "label": null,
+        "path": "/app/server.py"
+      }
+    },
+    {
+      "rule_id": "flask-misconfiguration-controls",
+      "rule_name": "Missing Security Controls",
+      "short_description": "Consider adding Flask-Security and Flask-Talisman security extensions to your Flask apps",
+      "description": "Consider adding Flask-Security and Flask-Talisman security extensions to your Flask apps",
+      "recommendation": "Flask-Security allows you to quickly add common security mechanisms to your Flask application. Flask-Social can also be used to add social or OAuth login and connection management.\n\n## Additional information\n\n**[OWASP-A6](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A6-Security_Misconfiguration)**\n\n**[Flask Security](https://flask-security.readthedocs.io/en/develop/index.html)**\n\n**[Flask Configuration](https://flask.palletsprojects.com/en/1.1.x/api/#configuration)**\n\n**[Flask Talisman](https://github.com/GoogleCloudPlatform/flask-talisman)**\n",
+      "cwe_category": "CWE-732",
+      "owasp_category": "a6-misconfiguration",
+      "severity": "LOW",
+      "source": {
+        "trigger_word": "flask_security",
+        "line_number": 1,
+        "label": "flask_security",
+        "path": "/app/server.py"
+      },
+      "sink": {
+        "trigger_word": null,
+        "line_number": 1,
+        "label": null,
+        "path": "/app/server.py"
+      }
+    }
+  ]
+}

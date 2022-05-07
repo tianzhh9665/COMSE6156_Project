@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.5.3" sequence="0" timestamp="1651961444970" analysisTimestamp="1651961444975" release="">
+  <Project projectName="">
+    <Jar>/app</Jar>
+    <SrcDir>/app</SrcDir>
+  </Project>
+  <BugInstance type="PREDICTABLE_RANDOM" priority="2" rank="12" abbrev="SECPR" category="SECURITY" instanceHash="32bb023a33f43e6fdf0422c183f89c18" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="330">
+    <ShortMessage>Predictable pseudorandom number generator</ShortMessage>
+    <LongMessage>This random generator (java.util.Random) is predictable</LongMessage>
+    <Class classname="com.sangria.operation.utils.CommonUtils" primary="true">
+      <SourceLine classname="com.sangria.operation.utils.CommonUtils" start="12" end="52" sourcefile="CommonUtils.java" sourcepath="com/sangria/operation/utils/CommonUtils.java">
+        <Message>At CommonUtils.java:[lines 12-52]</Message>
+      </SourceLine>
+      <Message>In class com.sangria.operation.utils.CommonUtils</Message>
+    </Class>
+    <Method classname="com.sangria.operation.utils.CommonUtils" name="generateUniqueId" signature="(Ljava/lang/String;I)Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="com.sangria.operation.utils.CommonUtils" start="33" end="44" startBytecode="0" endBytecode="289" sourcefile="CommonUtils.java" sourcepath="com/sangria/operation/utils/CommonUtils.java"/>
+      <Message>In method com.sangria.operation.utils.CommonUtils.generateUniqueId(String, int)</Message>
+    </Method>
+    <SourceLine classname="com.sangria.operation.utils.CommonUtils" primary="true" start="40" end="40" startBytecode="71" endBytecode="71" sourcefile="CommonUtils.java" sourcepath="com/sangria/operation/utils/CommonUtils.java">
+      <Message>At CommonUtils.java:[line 40]</Message>
+    </SourceLine>
+    <String value="java.util.Random">
+      <Message>Value java.util.Random</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="BAD_HEXA_CONVERSION" priority="2" rank="12" abbrev="SECBHC" category="SECURITY" instanceHash="8d838ee226b6d9bc9d17c7582f364fc4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="704">
+    <ShortMessage>Bad hexadecimal concatenation</ShortMessage>
+    <LongMessage>Leading zeros are omitted in the concatenation increasing collision potential</LongMessage>
+    <Class classname="com.sangria.operation.utils.MD5Utils" primary="true">
+      <SourceLine classname="com.sangria.operation.utils.MD5Utils" start="6" end="58" sourcefile="MD5Utils.java" sourcepath="com/sangria/operation/utils/MD5Utils.java">
+        <Message>At MD5Utils.java:[lines 6-58]</Message>
+      </SourceLine>
+      <Message>In class com.sangria.operation.utils.MD5Utils</Message>
+    </Class>
+    <Method classname="com.sangria.operation.utils.MD5Utils" name="getMD5Str" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="com.sangria.operation.utils.MD5Utils" start="35" end="58" startBytecode="0" endBytecode="398" sourcefile="MD5Utils.java" sourcepath="com/sangria/operation/utils/MD5Utils.java"/>
+      <Message>In method com.sangria.operation.utils.MD5Utils.getMD5Str(String)</Message>
+    </Method>
+    <SourceLine classname="com.sangria.operation.utils.MD5Utils" start="35" end="58" startBytecode="0" endBytecode="398" sourcefile="MD5Utils.java" sourcepath="com/sangria/operation/utils/MD5Utils.java" synthetic="true">
+      <Message>At MD5Utils.java:[lines 35-58]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="WEAK_MESSAGE_DIGEST_MD5" priority="1" rank="10" abbrev="SECMD5" category="SECURITY" instanceHash="f2f182b9fce1cf00123767dc68d05835" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="328">
+    <ShortMessage>MD2, MD4 and MD5 are weak hash functions</ShortMessage>
+    <LongMessage>This API MD5 (MDX) is not a recommended cryptographic hash function</LongMessage>
+    <Class classname="com.sangria.operation.utils.MD5Utils" primary="true">
+      <SourceLine classname="com.sangria.operation.utils.MD5Utils" start="6" end="58" sourcefile="MD5Utils.java" sourcepath="com/sangria/operation/utils/MD5Utils.java">
+        <Message>At MD5Utils.java:[lines 6-58]</Message>
+      </SourceLine>
+      <Message>In class com.sangria.operation.utils.MD5Utils</Message>
+    </Class>
+    <Method classname="com.sangria.operation.utils.MD5Utils" name="getMD5" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="com.sangria.operation.utils.MD5Utils" start="9" end="27" startBytecode="0" endBytecode="467" sourcefile="MD5Utils.java" sourcepath="com/sangria/operation/utils/MD5Utils.java"/>
+      <Message>In method com.sangria.operation.utils.MD5Utils.getMD5(String)</Message>
+    </Method>
+    <SourceLine classname="com.sangria.operation.utils.MD5Utils" primary="true" start="13" end="13" startBytecode="99" endBytecode="99" sourcefile="MD5Utils.java" sourcepath="com/sangria/operation/utils/MD5Utils.java">
+      <Message>At MD5Utils.java:[line 13]</Message>
+    </SourceLine>
+    <String value="MD5">
+      <Message>Value MD5</Message>
+    </String>
+  </BugInstance>
+  <BugInstance type="WEAK_MESSAGE_DIGEST_MD5" priority="1" rank="10" abbrev="SECMD5" category="SECURITY" instanceHash="34297c7a61656398b2b19e3307050a7c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="328">
+    <ShortMessage>MD2, MD4 and MD5 are weak hash functions</ShortMessage>
+    <LongMessage>This API MD5 (MDX) is not a recommended cryptographic hash function</LongMessage>
+    <Class classname="com.sangria.operation.utils.MD5Utils" primary="true">
+      <SourceLine classname="com.sangria.operation.utils.MD5Utils" start="6" end="58" sourcefile="MD5Utils.java" sourcepath="com/sangria/operation/utils/MD5Utils.java">
+        <Message>At MD5Utils.java:[lines 6-58]</Message>
+      </SourceLine>
+      <Message>In class com.sangria.operation.utils.MD5Utils</Message>
+    </Class>
+    <Method classname="com.sangria.operation.utils.MD5Utils" name="getMD5Str" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="com.sangria.operation.utils.MD5Utils" start="35" end="58" startBytecode="0" endBytecode="398" sourcefile="MD5Utils.java" sourcepath="com/sangria/operation/utils/MD5Utils.java"/>
+      <Message>In method com.sangria.operation.utils.MD5Utils.getMD5Str(String)</Message>
+    </Method>
+    <SourceLine classname="com.sangria.operation.utils.MD5Utils" primary="true" start="37" end="37" startBytecode="4" endBytecode="4" sourcefile="MD5Utils.java" sourcepath="com/sangria/operation/utils/MD5Utils.java">
+      <Message>At MD5Utils.java:[line 37]</Message>
+    </SourceLine>
+    <String value="MD5">
+      <Message>Value MD5</Message>
+    </String>
+  </BugInstance>
+  <BugCategory category="SECURITY">
+    <Description>Security</Description>
+  </BugCategory>
+  <BugPattern type="WEAK_MESSAGE_DIGEST_MD5" abbrev="SECMD5" category="SECURITY" cweid="328">
+    <ShortDescription>MD2, MD4 and MD5 are weak hash functions</ShortDescription>
+    <Details><![CDATA[
+            
+<p>The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. <b>PBKDF2</b> should be used to hash password for example.</p>
+
+<blockquote>
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2<sup>24.1</sup>).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2<sup>39</sup>).[2]"<br/>
+    - <a href="https://en.wikipedia.org/wiki/MD5#Security">Wikipedia: MD5 - Security</a>
+</blockquote>
+
+<blockquote>
+    "<b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256</b>:<br/>
+    The use of these hash functions is acceptable for all hash function applications."<br/>
+    - <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15</a>
+</blockquote>
+<blockquote>
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."<br/>
+- <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation  p.12</a>
+</blockquote>
+<br/>
+<p>
+    <b>Vulnerable Code:</b><br/>
+    <pre>MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();</pre>
+    <br/>
+    <pre>byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());</pre>
+</p>
+<br/>
+<p>
+    <b>Solution (Using bouncy castle):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}</pre>
+    <br/>
+    <b>Solution (Java 8 and later):</b><br/>
+    <pre>public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+[1] <a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf">On Collisions for MD5</a>: Master Thesis by M.M.J. Stevens<br/>
+[2] <a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf">Chosen-prefix collisions for MD5 and applications</a>: Paper written by Marc Stevens<br/>
+<a href="https://en.wikipedia.org/wiki/MD5">Wikipedia: MD5</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf">NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths</a><br/>
+<a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf">NIST: Recommendation for Password-Based Key Derivation</a><br/>
+<a href="https://stackoverflow.com/q/22580853/89769">Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327: Use of a Broken or Risky Cryptographic Algorithm</a>
+</p>
+
+        ]]></Details>
+  </BugPattern>
+  <BugPattern type="PREDICTABLE_RANDOM" abbrev="SECPR" category="SECURITY" cweid="330">
+    <ShortDescription>Predictable pseudorandom number generator</ShortDescription>
+    <Details><![CDATA[
+            
+<p>The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:</p>
+<ul>
+<li>a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token</li>
+<li>a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form</li>
+<li>any other secret value</li>
+</ul>
+<p>
+A quick fix could be to replace the use of <code>java.util.Random</code> with something stronger, such as <code>java.security.SecureRandom</code>.
+</p>
+<p>
+<b>Vulnerable Code:</b><br/>
+<pre>String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}</pre>
+</p>
+<p>
+<b>Solution:</b>
+<pre>import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html">Cracking Random Number Generators - Part 1 (https://jazzy.id.au)</a><br/>
+<a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers">CERT: MSC02-J. Generate strong random numbers</a><br/>
+<a href="https://cwe.mitre.org/data/definitions/330.html">CWE-330: Use of Insufficiently Random Values</a><br/>
+<a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html">Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)</a>
+</p>
+
+        ]]></Details>
+  </BugPattern>
+  <BugPattern type="BAD_HEXA_CONVERSION" abbrev="SECBHC" category="SECURITY" cweid="704">
+    <ShortDescription>Bad hexadecimal concatenation</ShortDescription>
+    <Details><![CDATA[
+            
+<p>When converting a byte array containing a hash signature to a human readable string, a conversion mistake can be made if
+the array is read byte by byte. The following sample illustrates the use of the method <code>Integer.toHexString()</code> which will trim any leading zeroes
+from each byte of the computed hash value.
+<pre>
+MessageDigest md = MessageDigest.getInstance("SHA-256");
+byte[] resultBytes = md.digest(password.getBytes("UTF-8"));
+
+StringBuilder stringBuilder = new StringBuilder();
+for(byte b :resultBytes) {
+    stringBuilder.append( Integer.toHexString( b & 0xFF ) );
+}
+
+return stringBuilder.toString();</pre>
+</p>
+<p>
+This mistake weakens the hash value computed since it introduces more collisions.
+For example, the hash values "0x0679" and "0x6709" would both output as "679" for the above function.
+</p>
+
+<p>
+In this situation, the method <code>Integer.toHexString()</code> should be replaced with <code>String.format()</code> as follows:
+<pre>stringBuilder.append( String.format( "%02X", b ) );</pre>
+</p>
+<br/>
+<p>
+<b>References</b><br/>
+<a href="https://cwe.mitre.org/data/definitions/704.html">CWE-704: Incorrect Type Conversion or Cast</a>
+</p>
+
+        ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="SECPR">
+    <Description>Predictable Pseudo Random Generator</Description>
+  </BugCode>
+  <BugCode abbrev="SECBHC">
+    <Description>Bad hexadecimal concatenation</Description>
+  </BugCode>
+  <BugCode abbrev="SECMD5">
+    <Description>MD2, MD4 and MD5 are weak hash functions</Description>
+  </BugCode>
+  <Errors errors="3" missingClasses="19">
+    <Error>
+      <ErrorMessage>Exception analyzing com.sangria.operation.controller.PlayerController using detector com.h3xstream.findsecbugs.spring.SpringEntityLeakDetector</ErrorMessage>
+      <Exception>java.lang.IllegalArgumentException: Invalid class name java/lang/String;Ljava/lang/String</Exception>
+      <StackTrace>edu.umd.cs.findbugs.classfile.ClassDescriptor.&lt;init&gt;(ClassDescriptor.java:59)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.classfile.DescriptorFactory.getClassDescriptor(DescriptorFactory.java:128)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.AnalysisCacheToRepositoryAdapter.loadClass(AnalysisCacheToRepositoryAdapter.java:90)</StackTrace>
+      <StackTrace>org.apache.bcel.Repository.lookupClass(Repository.java:65)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SignatureParserWithGeneric.typeToJavaClass(SignatureParserWithGeneric.java:67)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SignatureParserWithGeneric.getArgumentsClasses(SignatureParserWithGeneric.java:52)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SpringEntityLeakDetector.analyzeMethod(SpringEntityLeakDetector.java:108)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SpringEntityLeakDetector.visitClassContext(SpringEntityLeakDetector.java:69)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.DetectorToDetector2Adapter.visitClass(DetectorToDetector2Adapter.java:76)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.lambda$analyzeApplication$1(FindBugs2.java:1108)</StackTrace>
+      <StackTrace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.CurrentThreadExecutorService.execute(CurrentThreadExecutorService.java:86)</StackTrace>
+      <StackTrace>java.base/java.util.concurrent.AbstractExecutorService.invokeAll(AbstractExecutorService.java:242)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.analyzeApplication(FindBugs2.java:1118)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.execute(FindBugs2.java:309)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs.runMain(FindBugs.java:395)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.main(FindBugs2.java:1231)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.LaunchAppropriateUI.launch(LaunchAppropriateUI.java:106)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.LaunchAppropriateUI.main(LaunchAppropriateUI.java:198)</StackTrace>
+    </Error>
+    <Error>
+      <ErrorMessage>Exception analyzing com.sangria.operation.controller.ItemController using detector com.h3xstream.findsecbugs.spring.SpringEntityLeakDetector</ErrorMessage>
+      <Exception>java.lang.IllegalArgumentException: Invalid class name java/lang/String;Ljava/lang/String</Exception>
+      <StackTrace>edu.umd.cs.findbugs.classfile.ClassDescriptor.&lt;init&gt;(ClassDescriptor.java:59)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.classfile.DescriptorFactory.getClassDescriptor(DescriptorFactory.java:128)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.AnalysisCacheToRepositoryAdapter.loadClass(AnalysisCacheToRepositoryAdapter.java:90)</StackTrace>
+      <StackTrace>org.apache.bcel.Repository.lookupClass(Repository.java:65)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SignatureParserWithGeneric.typeToJavaClass(SignatureParserWithGeneric.java:67)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SignatureParserWithGeneric.getArgumentsClasses(SignatureParserWithGeneric.java:52)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SpringEntityLeakDetector.analyzeMethod(SpringEntityLeakDetector.java:108)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SpringEntityLeakDetector.visitClassContext(SpringEntityLeakDetector.java:69)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.DetectorToDetector2Adapter.visitClass(DetectorToDetector2Adapter.java:76)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.lambda$analyzeApplication$1(FindBugs2.java:1108)</StackTrace>
+      <StackTrace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.CurrentThreadExecutorService.execute(CurrentThreadExecutorService.java:86)</StackTrace>
+      <StackTrace>java.base/java.util.concurrent.AbstractExecutorService.invokeAll(AbstractExecutorService.java:242)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.analyzeApplication(FindBugs2.java:1118)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.execute(FindBugs2.java:309)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs.runMain(FindBugs.java:395)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.main(FindBugs2.java:1231)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.LaunchAppropriateUI.launch(LaunchAppropriateUI.java:106)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.LaunchAppropriateUI.main(LaunchAppropriateUI.java:198)</StackTrace>
+    </Error>
+    <Error>
+      <ErrorMessage>Exception analyzing com.sangria.operation.controller.InventoryController using detector com.h3xstream.findsecbugs.spring.SpringEntityLeakDetector</ErrorMessage>
+      <Exception>java.lang.IllegalArgumentException: Invalid class name java/lang/String;Ljava/lang/String</Exception>
+      <StackTrace>edu.umd.cs.findbugs.classfile.ClassDescriptor.&lt;init&gt;(ClassDescriptor.java:59)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.classfile.DescriptorFactory.getClassDescriptor(DescriptorFactory.java:128)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.AnalysisCacheToRepositoryAdapter.loadClass(AnalysisCacheToRepositoryAdapter.java:90)</StackTrace>
+      <StackTrace>org.apache.bcel.Repository.lookupClass(Repository.java:65)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SignatureParserWithGeneric.typeToJavaClass(SignatureParserWithGeneric.java:67)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SignatureParserWithGeneric.getArgumentsClasses(SignatureParserWithGeneric.java:52)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SpringEntityLeakDetector.analyzeMethod(SpringEntityLeakDetector.java:108)</StackTrace>
+      <StackTrace>com.h3xstream.findsecbugs.spring.SpringEntityLeakDetector.visitClassContext(SpringEntityLeakDetector.java:69)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.DetectorToDetector2Adapter.visitClass(DetectorToDetector2Adapter.java:76)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.lambda$analyzeApplication$1(FindBugs2.java:1108)</StackTrace>
+      <StackTrace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.CurrentThreadExecutorService.execute(CurrentThreadExecutorService.java:86)</StackTrace>
+      <StackTrace>java.base/java.util.concurrent.AbstractExecutorService.invokeAll(AbstractExecutorService.java:242)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.analyzeApplication(FindBugs2.java:1118)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.execute(FindBugs2.java:309)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs.runMain(FindBugs.java:395)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.FindBugs2.main(FindBugs2.java:1231)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.LaunchAppropriateUI.launch(LaunchAppropriateUI.java:106)</StackTrace>
+      <StackTrace>edu.umd.cs.findbugs.LaunchAppropriateUI.main(LaunchAppropriateUI.java:198)</StackTrace>
+    </Error>
+    <MissingClass>com.alibaba.fastjson.JSON</MissingClass>
+    <MissingClass>com.alibaba.fastjson.JSONObject</MissingClass>
+    <MissingClass>com.baomidou.mybatisplus.core.conditions.query.QueryWrapper</MissingClass>
+    <MissingClass>com.baomidou.mybatisplus.core.mapper.BaseMapper</MissingClass>
+    <MissingClass>com.baomidou.mybatisplus.core.metadata.IPage</MissingClass>
+    <MissingClass>com.baomidou.mybatisplus.core.toolkit.StringUtils</MissingClass>
+    <MissingClass>javax.servlet.http.HttpServletRequest</MissingClass>
+    <MissingClass>javax.servlet.http.HttpServletResponse</MissingClass>
+    <MissingClass>org.junit.Assert</MissingClass>
+    <MissingClass>org.springframework.boot.SpringApplication</MissingClass>
+    <MissingClass>org.springframework.web.context.request.RequestContextHolder</MissingClass>
+    <MissingClass>org.springframework.web.context.request.ServletRequestAttributes</MissingClass>
+    <MissingClass>springfox.documentation.builders.ApiInfoBuilder</MissingClass>
+    <MissingClass>springfox.documentation.builders.PathSelectors</MissingClass>
+    <MissingClass>springfox.documentation.builders.RequestHandlerSelectors</MissingClass>
+    <MissingClass>springfox.documentation.service.ApiInfo</MissingClass>
+    <MissingClass>springfox.documentation.spi.DocumentationType</MissingClass>
+    <MissingClass>springfox.documentation.spring.web.plugins.ApiSelectorBuilder</MissingClass>
+    <MissingClass>springfox.documentation.spring.web.plugins.Docket</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Sat, 7 May 2022 22:10:44 +0000" total_classes="50" referenced_classes="88" total_bugs="4" total_size="2813" num_packages="10" java_version="11.0.15" vm_version="11.0.15+9-LTS" cpu_seconds="17.45" clock_seconds="17.52" peak_mbytes="161.92" alloc_mbytes="889.38" gc_seconds="0.83" priority_2="2" priority_1="2">
+    <FileStats path="com/sangria/operation/Enum/ItemTypeEnum.java" bugCount="0" size="22"/>
+    <FileStats path="com/sangria/operation/Enum/PlayerStatusEnum.java" bugCount="0" size="18"/>
+    <FileStats path="com/sangria/operation/Enum/PlayerTradeTypeEnum.java" bugCount="0" size="22"/>
+    <FileStats path="com/sangria/operation/Enum/PlayerTradeWayEnum.java" bugCount="0" size="18"/>
+    <FileStats path="com/sangria/operation/Enum/RequestResultEnum.java" bugCount="0" size="20"/>
+    <FileStats path="com/sangria/operation/ServiceOperationApplication.java" bugCount="0" size="6"/>
+    <FileStats path="com/sangria/operation/ServiceOperationApplicationTests.java" bugCount="0" size="688"/>
+    <FileStats path="com/sangria/operation/config/SwaggerConfig.java" bugCount="0" size="14"/>
+    <FileStats path="com/sangria/operation/controller/BaseController.java" bugCount="0" size="38"/>
+    <FileStats path="com/sangria/operation/controller/InventoryController.java" bugCount="0" size="21"/>
+    <FileStats path="com/sangria/operation/controller/ItemController.java" bugCount="0" size="49"/>
+    <FileStats path="com/sangria/operation/controller/PlayerController.java" bugCount="0" size="159"/>
+    <FileStats path="com/sangria/operation/dao/GameManagerMapper.java" bugCount="0" size="1"/>
+    <FileStats path="com/sangria/operation/dao/GameMapper.java" bugCount="0" size="1"/>
+    <FileStats path="com/sangria/operation/dao/InventoryMapper.java" bugCount="0" size="1"/>
+    <FileStats path="com/sangria/operation/dao/ItemMapper.java" bugCount="0" size="1"/>
+    <FileStats path="com/sangria/operation/dao/PlayerInventoryMapper.java" bugCount="0" size="1"/>
+    <FileStats path="com/sangria/operation/dao/PlayerMapper.java" bugCount="0" size="1"/>
+    <FileStats path="com/sangria/operation/dto/InventoryAddDTO.java" bugCount="0" size="11"/>
+    <FileStats path="com/sangria/operation/dto/InventoryClearDTO.java" bugCount="0" size="15"/>
+    <FileStats path="com/sangria/operation/dto/InventoryInfoReturnDTO.java" bugCount="0" size="23"/>
+    <FileStats path="com/sangria/operation/dto/ItemAddDTO.java" bugCount="0" size="35"/>
+    <FileStats path="com/sangria/operation/dto/ItemMakeDTO.java" bugCount="0" size="23"/>
+    <FileStats path="com/sangria/operation/dto/PlayerAddDTO.java" bugCount="0" size="15"/>
+    <FileStats path="com/sangria/operation/dto/PlayerAddMoneyDTO.java" bugCount="0" size="19"/>
+    <FileStats path="com/sangria/operation/dto/PlayerBuyItemSysDTO.java" bugCount="0" size="23"/>
+    <FileStats path="com/sangria/operation/dto/PlayerDeleteDTO.java" bugCount="0" size="15"/>
+    <FileStats path="com/sangria/operation/dto/PlayerFreezeDTO.java" bugCount="0" size="15"/>
+    <FileStats path="com/sangria/operation/dto/PlayerInfoReturnDTO.java" bugCount="0" size="39"/>
+    <FileStats path="com/sangria/operation/dto/PlayerItemDTO.java" bugCount="0" size="23"/>
+    <FileStats path="com/sangria/operation/dto/PlayerRemoveMoneyDTO.java" bugCount="0" size="19"/>
+    <FileStats path="com/sangria/operation/dto/PlayerSellItemSysDTO.java" bugCount="0" size="23"/>
+    <FileStats path="com/sangria/operation/dto/PlayerTradeRequestDTO.java" bugCount="0" size="39"/>
+    <FileStats path="com/sangria/operation/dto/PlayerUnfreezeDTO.java" bugCount="0" size="15"/>
+    <FileStats path="com/sangria/operation/dto/ResponseDTO.java" bugCount="0" size="20"/>
+    <FileStats path="com/sangria/operation/entity/GameDO.java" bugCount="0" size="32"/>
+    <FileStats path="com/sangria/operation/entity/GameManagerDO.java" bugCount="0" size="40"/>
+    <FileStats path="com/sangria/operation/entity/InventoryDO.java" bugCount="0" size="28"/>
+    <FileStats path="com/sangria/operation/entity/ItemDO.java" bugCount="0" size="48"/>
+    <FileStats path="com/sangria/operation/entity/PlayerDO.java" bugCount="0" size="40"/>
+    <FileStats path="com/sangria/operation/entity/PlayerInventoryDO.java" bugCount="0" size="40"/>
+    <FileStats path="com/sangria/operation/service/InventoryService.java" bugCount="0" size="4"/>
+    <FileStats path="com/sangria/operation/service/ItemService.java" bugCount="0" size="4"/>
+    <FileStats path="com/sangria/operation/service/PlayerService.java" bugCount="0" size="13"/>
+    <FileStats path="com/sangria/operation/service/impl/InventoryServiceImpl.java" bugCount="0" size="93"/>
+    <FileStats path="com/sangria/operation/service/impl/ItemServiceImpl.java" bugCount="0" size="172"/>
+    <FileStats path="com/sangria/operation/service/impl/PlayerServiceImpl.java" bugCount="0" size="757"/>
+    <FileStats path="com/sangria/operation/utils/CommonUtils.java" bugCount="1" size="30" bugHash="4f46ee843d2e01617e9760e09bd590e3"/>
+    <FileStats path="com/sangria/operation/utils/MD5Utils.java" bugCount="3" size="44" bugHash="c3cbb90cbd67e29be4af2ec3e099fbf1"/>
+    <FileStats path="com/sangria/operation/utils/StringUtils.java" bugCount="0" size="15"/>
+    <PackageStats package="com.sangria.operation" total_bugs="0" total_types="2" total_size="694">
+      <ClassStats class="com.sangria.operation.ServiceOperationApplication" sourceFile="ServiceOperationApplication.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="com.sangria.operation.ServiceOperationApplicationTests" sourceFile="ServiceOperationApplicationTests.java" interface="false" size="688" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.sangria.operation.Enum" total_bugs="0" total_types="5" total_size="100">
+      <ClassStats class="com.sangria.operation.Enum.ItemTypeEnum" sourceFile="ItemTypeEnum.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="com.sangria.operation.Enum.PlayerStatusEnum" sourceFile="PlayerStatusEnum.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="com.sangria.operation.Enum.PlayerTradeTypeEnum" sourceFile="PlayerTradeTypeEnum.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="com.sangria.operation.Enum.PlayerTradeWayEnum" sourceFile="PlayerTradeWayEnum.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="com.sangria.operation.Enum.RequestResultEnum" sourceFile="RequestResultEnum.java" interface="false" size="20" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.sangria.operation.config" total_bugs="0" total_types="1" total_size="14">
+      <ClassStats class="com.sangria.operation.config.SwaggerConfig" sourceFile="SwaggerConfig.java" interface="false" size="14" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.sangria.operation.controller" total_bugs="0" total_types="4" total_size="267">
+      <ClassStats class="com.sangria.operation.controller.BaseController" sourceFile="BaseController.java" interface="false" size="38" bugs="0"/>
+      <ClassStats class="com.sangria.operation.controller.InventoryController" sourceFile="InventoryController.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="com.sangria.operation.controller.ItemController" sourceFile="ItemController.java" interface="false" size="49" bugs="0"/>
+      <ClassStats class="com.sangria.operation.controller.PlayerController" sourceFile="PlayerController.java" interface="false" size="159" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.sangria.operation.dao" total_bugs="0" total_types="6" total_size="6">
+      <ClassStats class="com.sangria.operation.dao.GameManagerMapper" sourceFile="GameManagerMapper.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dao.GameMapper" sourceFile="GameMapper.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dao.InventoryMapper" sourceFile="InventoryMapper.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dao.ItemMapper" sourceFile="ItemMapper.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dao.PlayerInventoryMapper" sourceFile="PlayerInventoryMapper.java" interface="true" size="1" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dao.PlayerMapper" sourceFile="PlayerMapper.java" interface="true" size="1" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.sangria.operation.dto" total_bugs="0" total_types="17" total_size="372">
+      <ClassStats class="com.sangria.operation.dto.InventoryAddDTO" sourceFile="InventoryAddDTO.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.InventoryClearDTO" sourceFile="InventoryClearDTO.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.InventoryInfoReturnDTO" sourceFile="InventoryInfoReturnDTO.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.ItemAddDTO" sourceFile="ItemAddDTO.java" interface="false" size="35" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.ItemMakeDTO" sourceFile="ItemMakeDTO.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.PlayerAddDTO" sourceFile="PlayerAddDTO.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.PlayerAddMoneyDTO" sourceFile="PlayerAddMoneyDTO.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.PlayerBuyItemSysDTO" sourceFile="PlayerBuyItemSysDTO.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.PlayerDeleteDTO" sourceFile="PlayerDeleteDTO.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.PlayerFreezeDTO" sourceFile="PlayerFreezeDTO.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.PlayerInfoReturnDTO" sourceFile="PlayerInfoReturnDTO.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.PlayerItemDTO" sourceFile="PlayerItemDTO.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.PlayerRemoveMoneyDTO" sourceFile="PlayerRemoveMoneyDTO.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.PlayerSellItemSysDTO" sourceFile="PlayerSellItemSysDTO.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.PlayerTradeRequestDTO" sourceFile="PlayerTradeRequestDTO.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.PlayerUnfreezeDTO" sourceFile="PlayerUnfreezeDTO.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="com.sangria.operation.dto.ResponseDTO" sourceFile="ResponseDTO.java" interface="false" size="20" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.sangria.operation.entity" total_bugs="0" total_types="6" total_size="228">
+      <ClassStats class="com.sangria.operation.entity.GameDO" sourceFile="GameDO.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="com.sangria.operation.entity.GameManagerDO" sourceFile="GameManagerDO.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="com.sangria.operation.entity.InventoryDO" sourceFile="InventoryDO.java" interface="false" size="28" bugs="0"/>
+      <ClassStats class="com.sangria.operation.entity.ItemDO" sourceFile="ItemDO.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="com.sangria.operation.entity.PlayerDO" sourceFile="PlayerDO.java" interface="false" size="40" bugs="0"/>
+      <ClassStats class="com.sangria.operation.entity.PlayerInventoryDO" sourceFile="PlayerInventoryDO.java" interface="false" size="40" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.sangria.operation.service" total_bugs="0" total_types="3" total_size="21">
+      <ClassStats class="com.sangria.operation.service.InventoryService" sourceFile="InventoryService.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="com.sangria.operation.service.ItemService" sourceFile="ItemService.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="com.sangria.operation.service.PlayerService" sourceFile="PlayerService.java" interface="true" size="13" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.sangria.operation.service.impl" total_bugs="0" total_types="3" total_size="1022">
+      <ClassStats class="com.sangria.operation.service.impl.InventoryServiceImpl" sourceFile="InventoryServiceImpl.java" interface="false" size="93" bugs="0"/>
+      <ClassStats class="com.sangria.operation.service.impl.ItemServiceImpl" sourceFile="ItemServiceImpl.java" interface="false" size="172" bugs="0"/>
+      <ClassStats class="com.sangria.operation.service.impl.PlayerServiceImpl" sourceFile="PlayerServiceImpl.java" interface="false" size="757" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.sangria.operation.utils" total_bugs="4" total_types="3" total_size="89" priority_2="2" priority_1="2">
+      <ClassStats class="com.sangria.operation.utils.CommonUtils" sourceFile="CommonUtils.java" interface="false" size="30" bugs="1" priority_2="1"/>
+      <ClassStats class="com.sangria.operation.utils.MD5Utils" sourceFile="MD5Utils.java" interface="false" size="44" bugs="3" priority_2="1" priority_1="2"/>
+      <ClassStats class="com.sangria.operation.utils.StringUtils" sourceFile="StringUtils.java" interface="false" size="15" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="884" invocations="583" avgMicrosecondsPerInvocation="1517" maxMicrosecondsPerInvocation="54505" standardDeviationMicrosecondsPerInvocation="4207"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.TaintDataflowEngine" totalMilliseconds="651" invocations="457" avgMicrosecondsPerInvocation="1424" maxMicrosecondsPerInvocation="178989" standardDeviationMicrosecondsPerInvocation="8861"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="597" invocations="457" avgMicrosecondsPerInvocation="1307" maxMicrosecondsPerInvocation="69308" standardDeviationMicrosecondsPerInvocation="4573"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="537" invocations="457" avgMicrosecondsPerInvocation="1176" maxMicrosecondsPerInvocation="67970" standardDeviationMicrosecondsPerInvocation="4929"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="501" invocations="457" avgMicrosecondsPerInvocation="1098" maxMicrosecondsPerInvocation="116744" standardDeviationMicrosecondsPerInvocation="6030"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="497" invocations="457" avgMicrosecondsPerInvocation="1088" maxMicrosecondsPerInvocation="112075" standardDeviationMicrosecondsPerInvocation="5940"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="391" invocations="475" avgMicrosecondsPerInvocation="823" maxMicrosecondsPerInvocation="23364" standardDeviationMicrosecondsPerInvocation="2427"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="391" invocations="457" avgMicrosecondsPerInvocation="855" maxMicrosecondsPerInvocation="79429" standardDeviationMicrosecondsPerInvocation="4356"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="300" invocations="585" avgMicrosecondsPerInvocation="513" maxMicrosecondsPerInvocation="80615" standardDeviationMicrosecondsPerInvocation="4046"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="262" invocations="207" avgMicrosecondsPerInvocation="1266" maxMicrosecondsPerInvocation="37946" standardDeviationMicrosecondsPerInvocation="3471"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="225" invocations="88" avgMicrosecondsPerInvocation="2564" maxMicrosecondsPerInvocation="29246" standardDeviationMicrosecondsPerInvocation="5667"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.collect.CollectStatistics" totalMilliseconds="211" invocations="88" avgMicrosecondsPerInvocation="2398" maxMicrosecondsPerInvocation="32925" standardDeviationMicrosecondsPerInvocation="5068"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="192" invocations="88" avgMicrosecondsPerInvocation="2185" maxMicrosecondsPerInvocation="36285" standardDeviationMicrosecondsPerInvocation="5374"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="167" invocations="612" avgMicrosecondsPerInvocation="274" maxMicrosecondsPerInvocation="11497" standardDeviationMicrosecondsPerInvocation="1011"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.command.CommandInjectionDetector" totalMilliseconds="164" invocations="50" avgMicrosecondsPerInvocation="3293" maxMicrosecondsPerInvocation="136393" standardDeviationMicrosecondsPerInvocation="19084"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="161" invocations="249" avgMicrosecondsPerInvocation="647" maxMicrosecondsPerInvocation="29313" standardDeviationMicrosecondsPerInvocation="2334"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="153" invocations="50" avgMicrosecondsPerInvocation="3074" maxMicrosecondsPerInvocation="28866" standardDeviationMicrosecondsPerInvocation="5811"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="132" invocations="50" avgMicrosecondsPerInvocation="2640" maxMicrosecondsPerInvocation="39611" standardDeviationMicrosecondsPerInvocation="6840"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="130" invocations="475" avgMicrosecondsPerInvocation="274" maxMicrosecondsPerInvocation="44406" standardDeviationMicrosecondsPerInvocation="2186"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDoubleCheck" totalMilliseconds="127" invocations="50" avgMicrosecondsPerInvocation="2544" maxMicrosecondsPerInvocation="103086" standardDeviationMicrosecondsPerInvocation="14435"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="125" invocations="50" avgMicrosecondsPerInvocation="2502" maxMicrosecondsPerInvocation="16622" standardDeviationMicrosecondsPerInvocation="4086"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.collect.CollectNullableMethodStatus" totalMilliseconds="122" invocations="88" avgMicrosecondsPerInvocation="1393" maxMicrosecondsPerInvocation="34378" standardDeviationMicrosecondsPerInvocation="4288"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="117" invocations="457" avgMicrosecondsPerInvocation="256" maxMicrosecondsPerInvocation="28532" standardDeviationMicrosecondsPerInvocation="1557"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="105" invocations="457" avgMicrosecondsPerInvocation="231" maxMicrosecondsPerInvocation="16136" standardDeviationMicrosecondsPerInvocation="1286"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="102" invocations="50" avgMicrosecondsPerInvocation="2056" maxMicrosecondsPerInvocation="14100" standardDeviationMicrosecondsPerInvocation="3614"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.DeletingWhileIterating" totalMilliseconds="96" invocations="50" avgMicrosecondsPerInvocation="1938" maxMicrosecondsPerInvocation="21101" standardDeviationMicrosecondsPerInvocation="4094"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="91" invocations="50" avgMicrosecondsPerInvocation="1833" maxMicrosecondsPerInvocation="12694" standardDeviationMicrosecondsPerInvocation="3144"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.OverlyConcreteParameter" totalMilliseconds="87" invocations="50" avgMicrosecondsPerInvocation="1742" maxMicrosecondsPerInvocation="18285" standardDeviationMicrosecondsPerInvocation="3353"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.SillynessPotPourri" totalMilliseconds="85" invocations="50" avgMicrosecondsPerInvocation="1713" maxMicrosecondsPerInvocation="11995" standardDeviationMicrosecondsPerInvocation="3170"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.LocalSynchronizedCollection" totalMilliseconds="80" invocations="50" avgMicrosecondsPerInvocation="1618" maxMicrosecondsPerInvocation="11674" standardDeviationMicrosecondsPerInvocation="3022"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="79" invocations="88" avgMicrosecondsPerInvocation="905" maxMicrosecondsPerInvocation="18229" standardDeviationMicrosecondsPerInvocation="2674"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="76" invocations="88" avgMicrosecondsPerInvocation="870" maxMicrosecondsPerInvocation="14445" standardDeviationMicrosecondsPerInvocation="2626"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="74" invocations="497" avgMicrosecondsPerInvocation="150" maxMicrosecondsPerInvocation="8737" standardDeviationMicrosecondsPerInvocation="722"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.password.ConstantPasswordDetector" totalMilliseconds="72" invocations="50" avgMicrosecondsPerInvocation="1458" maxMicrosecondsPerInvocation="11966" standardDeviationMicrosecondsPerInvocation="2925"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref$CheckCallSitesAndReturnInstructions" totalMilliseconds="72" invocations="457" avgMicrosecondsPerInvocation="159" maxMicrosecondsPerInvocation="12131" standardDeviationMicrosecondsPerInvocation="891"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.PresizeCollections" totalMilliseconds="70" invocations="50" avgMicrosecondsPerInvocation="1416" maxMicrosecondsPerInvocation="19128" standardDeviationMicrosecondsPerInvocation="3912"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindReturnRef" totalMilliseconds="70" invocations="50" avgMicrosecondsPerInvocation="1412" maxMicrosecondsPerInvocation="19335" standardDeviationMicrosecondsPerInvocation="3528"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.ClassEnvy" totalMilliseconds="68" invocations="50" avgMicrosecondsPerInvocation="1374" maxMicrosecondsPerInvocation="20340" standardDeviationMicrosecondsPerInvocation="3412"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.WeakFilenameUtilsMethodDetector" totalMilliseconds="67" invocations="50" avgMicrosecondsPerInvocation="1350" maxMicrosecondsPerInvocation="17159" standardDeviationMicrosecondsPerInvocation="3586"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadCast2" totalMilliseconds="65" invocations="50" avgMicrosecondsPerInvocation="1307" maxMicrosecondsPerInvocation="26697" standardDeviationMicrosecondsPerInvocation="4345"/>
+      <ClassProfile name="edu.umd.cs.findbugs.DetectorToDetector2Adapter" totalMilliseconds="65" invocations="19214" avgMicrosecondsPerInvocation="3" maxMicrosecondsPerInvocation="8026" standardDeviationMicrosecondsPerInvocation="107"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUselessObjects" totalMilliseconds="63" invocations="50" avgMicrosecondsPerInvocation="1268" maxMicrosecondsPerInvocation="13016" standardDeviationMicrosecondsPerInvocation="2867"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.sql.SqlInjectionDetector" totalMilliseconds="62" invocations="50" avgMicrosecondsPerInvocation="1241" maxMicrosecondsPerInvocation="18677" standardDeviationMicrosecondsPerInvocation="3740"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindSelfComparison" totalMilliseconds="60" invocations="50" avgMicrosecondsPerInvocation="1216" maxMicrosecondsPerInvocation="12689" standardDeviationMicrosecondsPerInvocation="2811"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.PredictableRandomDetector" totalMilliseconds="59" invocations="50" avgMicrosecondsPerInvocation="1188" maxMicrosecondsPerInvocation="8457" standardDeviationMicrosecondsPerInvocation="2487"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="59" invocations="88" avgMicrosecondsPerInvocation="672" maxMicrosecondsPerInvocation="12426" standardDeviationMicrosecondsPerInvocation="1931"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.extra.JstlExpressionWhiteLister" totalMilliseconds="58" invocations="50" avgMicrosecondsPerInvocation="1174" maxMicrosecondsPerInvocation="8323" standardDeviationMicrosecondsPerInvocation="2418"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="58" invocations="475" avgMicrosecondsPerInvocation="122" maxMicrosecondsPerInvocation="10173" standardDeviationMicrosecondsPerInvocation="833"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.HttpResponseSplittingDetector" totalMilliseconds="58" invocations="50" avgMicrosecondsPerInvocation="1162" maxMicrosecondsPerInvocation="18001" standardDeviationMicrosecondsPerInvocation="3660"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="57" invocations="9812" avgMicrosecondsPerInvocation="5" maxMicrosecondsPerInvocation="8119" standardDeviationMicrosecondsPerInvocation="132"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="57" invocations="88" avgMicrosecondsPerInvocation="657" maxMicrosecondsPerInvocation="10158" standardDeviationMicrosecondsPerInvocation="1715"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.LoggerOddities" totalMilliseconds="57" invocations="50" avgMicrosecondsPerInvocation="1154" maxMicrosecondsPerInvocation="12335" standardDeviationMicrosecondsPerInvocation="2715"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="56" invocations="88" avgMicrosecondsPerInvocation="637" maxMicrosecondsPerInvocation="10046" standardDeviationMicrosecondsPerInvocation="1867"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="55" invocations="50" avgMicrosecondsPerInvocation="1118" maxMicrosecondsPerInvocation="8600" standardDeviationMicrosecondsPerInvocation="2145"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DefaultEncodingDetector" totalMilliseconds="55" invocations="50" avgMicrosecondsPerInvocation="1110" maxMicrosecondsPerInvocation="27857" standardDeviationMicrosecondsPerInvocation="4600"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.file.PathTraversalDetector" totalMilliseconds="55" invocations="50" avgMicrosecondsPerInvocation="1106" maxMicrosecondsPerInvocation="19929" standardDeviationMicrosecondsPerInvocation="3478"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUseOfNonSerializableValue" totalMilliseconds="54" invocations="50" avgMicrosecondsPerInvocation="1098" maxMicrosecondsPerInvocation="16296" standardDeviationMicrosecondsPerInvocation="3022"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.CompareClassNameEquals" totalMilliseconds="54" invocations="50" avgMicrosecondsPerInvocation="1086" maxMicrosecondsPerInvocation="18398" standardDeviationMicrosecondsPerInvocation="3553"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.HangingExecutors" totalMilliseconds="54" invocations="50" avgMicrosecondsPerInvocation="1084" maxMicrosecondsPerInvocation="10658" standardDeviationMicrosecondsPerInvocation="2464"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.BuryingLogic" totalMilliseconds="53" invocations="50" avgMicrosecondsPerInvocation="1064" maxMicrosecondsPerInvocation="9354" standardDeviationMicrosecondsPerInvocation="2305"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.DubiousSetOfCollections" totalMilliseconds="53" invocations="50" avgMicrosecondsPerInvocation="1061" maxMicrosecondsPerInvocation="14980" standardDeviationMicrosecondsPerInvocation="2999"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.JDBCVendorReliance" totalMilliseconds="52" invocations="50" avgMicrosecondsPerInvocation="1056" maxMicrosecondsPerInvocation="8531" standardDeviationMicrosecondsPerInvocation="2191"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SynchronizingOnContentsOfFieldToProtectField" totalMilliseconds="52" invocations="50" avgMicrosecondsPerInvocation="1053" maxMicrosecondsPerInvocation="16681" standardDeviationMicrosecondsPerInvocation="2923"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.xml.XmlStreamReaderDetector" totalMilliseconds="51" invocations="50" avgMicrosecondsPerInvocation="1030" maxMicrosecondsPerInvocation="16643" standardDeviationMicrosecondsPerInvocation="3019"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RepeatedConditionals" totalMilliseconds="51" invocations="50" avgMicrosecondsPerInvocation="1025" maxMicrosecondsPerInvocation="8903" standardDeviationMicrosecondsPerInvocation="2223"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ReflectiveClasses" totalMilliseconds="51" invocations="88" avgMicrosecondsPerInvocation="581" maxMicrosecondsPerInvocation="13436" standardDeviationMicrosecondsPerInvocation="1968"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ReverseDepthFirstSearchFactory" totalMilliseconds="51" invocations="457" avgMicrosecondsPerInvocation="111" maxMicrosecondsPerInvocation="12063" standardDeviationMicrosecondsPerInvocation="808"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUnsatisfiedObligation" totalMilliseconds="50" invocations="50" avgMicrosecondsPerInvocation="1000" maxMicrosecondsPerInvocation="11131" standardDeviationMicrosecondsPerInvocation="2549"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.collect.CollectMethodsReturningImmutableCollections" totalMilliseconds="49" invocations="88" avgMicrosecondsPerInvocation="564" maxMicrosecondsPerInvocation="11889" standardDeviationMicrosecondsPerInvocation="1753"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.IntCast2LongAsInstant" totalMilliseconds="48" invocations="50" avgMicrosecondsPerInvocation="978" maxMicrosecondsPerInvocation="16494" standardDeviationMicrosecondsPerInvocation="2970"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.template.VelocityDetector" totalMilliseconds="48" invocations="50" avgMicrosecondsPerInvocation="976" maxMicrosecondsPerInvocation="11520" standardDeviationMicrosecondsPerInvocation="2533"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.cookie.PersistentCookieDetector" totalMilliseconds="48" invocations="50" avgMicrosecondsPerInvocation="973" maxMicrosecondsPerInvocation="26576" standardDeviationMicrosecondsPerInvocation="3904"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.script.OgnlInjectionDetector" totalMilliseconds="47" invocations="50" avgMicrosecondsPerInvocation="950" maxMicrosecondsPerInvocation="12215" standardDeviationMicrosecondsPerInvocation="2462"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.IOIssues" totalMilliseconds="45" invocations="50" avgMicrosecondsPerInvocation="919" maxMicrosecondsPerInvocation="9192" standardDeviationMicrosecondsPerInvocation="2308"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.PossibleConstantAllocationInLoop" totalMilliseconds="44" invocations="50" avgMicrosecondsPerInvocation="898" maxMicrosecondsPerInvocation="10369" standardDeviationMicrosecondsPerInvocation="2297"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.OptionalIssues" totalMilliseconds="44" invocations="50" avgMicrosecondsPerInvocation="888" maxMicrosecondsPerInvocation="8665" standardDeviationMicrosecondsPerInvocation="2209"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.InfiniteLoop" totalMilliseconds="44" invocations="50" avgMicrosecondsPerInvocation="886" maxMicrosecondsPerInvocation="8711" standardDeviationMicrosecondsPerInvocation="2189"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="44" invocations="88" avgMicrosecondsPerInvocation="501" maxMicrosecondsPerInvocation="8265" standardDeviationMicrosecondsPerInvocation="1381"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindBadEndOfStreamCheck" totalMilliseconds="44" invocations="50" avgMicrosecondsPerInvocation="880" maxMicrosecondsPerInvocation="9691" standardDeviationMicrosecondsPerInvocation="2327"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.StringifiedTypes" totalMilliseconds="43" invocations="50" avgMicrosecondsPerInvocation="863" maxMicrosecondsPerInvocation="8557" standardDeviationMicrosecondsPerInvocation="2063"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.InefficientStringBuffering" totalMilliseconds="42" invocations="50" avgMicrosecondsPerInvocation="850" maxMicrosecondsPerInvocation="8893" standardDeviationMicrosecondsPerInvocation="2020"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="42" invocations="50" avgMicrosecondsPerInvocation="848" maxMicrosecondsPerInvocation="13711" standardDeviationMicrosecondsPerInvocation="2536"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.scala.XssTwirlDetector" totalMilliseconds="42" invocations="50" avgMicrosecondsPerInvocation="847" maxMicrosecondsPerInvocation="8281" standardDeviationMicrosecondsPerInvocation="2035"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.script.SpelViewDetector" totalMilliseconds="41" invocations="50" avgMicrosecondsPerInvocation="828" maxMicrosecondsPerInvocation="10251" standardDeviationMicrosecondsPerInvocation="2366"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.extra.PotentialValueTracker" totalMilliseconds="41" invocations="50" avgMicrosecondsPerInvocation="823" maxMicrosecondsPerInvocation="12412" standardDeviationMicrosecondsPerInvocation="2537"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.LingeringGraphicsObjects" totalMilliseconds="41" invocations="50" avgMicrosecondsPerInvocation="821" maxMicrosecondsPerInvocation="17259" standardDeviationMicrosecondsPerInvocation="2735"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPuzzlers" totalMilliseconds="41" invocations="50" avgMicrosecondsPerInvocation="821" maxMicrosecondsPerInvocation="8825" standardDeviationMicrosecondsPerInvocation="1948"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.crypto.HazelcastSymmetricEncryptionDetector" totalMilliseconds="41" invocations="50" avgMicrosecondsPerInvocation="820" maxMicrosecondsPerInvocation="10518" standardDeviationMicrosecondsPerInvocation="2143"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.ModifyingUnmodifiableCollection" totalMilliseconds="40" invocations="50" avgMicrosecondsPerInvocation="817" maxMicrosecondsPerInvocation="8585" standardDeviationMicrosecondsPerInvocation="1953"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.injection.redirect.UnvalidatedRedirectDetector" totalMilliseconds="40" invocations="50" avgMicrosecondsPerInvocation="813" maxMicrosecondsPerInvocation="12275" standardDeviationMicrosecondsPerInvocation="2307"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.ExternalConfigurationControlDetector" totalMilliseconds="40" invocations="50" avgMicrosecondsPerInvocation="804" maxMicrosecondsPerInvocation="19974" standardDeviationMicrosecondsPerInvocation="3208"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.HttpClientProblems" totalMilliseconds="39" invocations="50" avgMicrosecondsPerInvocation="798" maxMicrosecondsPerInvocation="10470" standardDeviationMicrosecondsPerInvocation="1959"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.crypto.UnencryptedSocketDetector" totalMilliseconds="39" invocations="50" avgMicrosecondsPerInvocation="786" maxMicrosecondsPerInvocation="9933" standardDeviationMicrosecondsPerInvocation="2201"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.BackportReusePublicIdentifiers" totalMilliseconds="39" invocations="50" avgMicrosecondsPerInvocation="782" maxMicrosecondsPerInvocation="12298" standardDeviationMicrosecondsPerInvocation="2264"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.SideEffectConstructor" totalMilliseconds="39" invocations="50" avgMicrosecondsPerInvocation="781" maxMicrosecondsPerInvocation="8506" standardDeviationMicrosecondsPerInvocation="1858"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.InvalidConstantArgument" totalMilliseconds="39" invocations="50" avgMicrosecondsPerInvocation="780" maxMicrosecondsPerInvocation="8285" standardDeviationMicrosecondsPerInvocation="1936"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteCheckReturnValueAnnotations" totalMilliseconds="38" invocations="88" avgMicrosecondsPerInvocation="441" maxMicrosecondsPerInvocation="12877" standardDeviationMicrosecondsPerInvocation="1812"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.xml.XxeDetector" totalMilliseconds="38" invocations="50" avgMicrosecondsPerInvocation="772" maxMicrosecondsPerInvocation="8313" standardDeviationMicrosecondsPerInvocation="1931"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.ldap.LdapEntryPoisoningDetector" totalMilliseconds="38" invocations="50" avgMicrosecondsPerInvocation="771" maxMicrosecondsPerInvocation="12239" standardDeviationMicrosecondsPerInvocation="2248"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.UnnecessaryStoreBeforeReturn" totalMilliseconds="38" invocations="50" avgMicrosecondsPerInvocation="765" maxMicrosecondsPerInvocation="8657" standardDeviationMicrosecondsPerInvocation="1910"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.CharsetIssues" totalMilliseconds="38" invocations="50" avgMicrosecondsPerInvocation="761" maxMicrosecondsPerInvocation="9203" standardDeviationMicrosecondsPerInvocation="1956"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="37" invocations="88" avgMicrosecondsPerInvocation="431" maxMicrosecondsPerInvocation="9608" standardDeviationMicrosecondsPerInvocation="1345"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.PossiblyRedundantMethodCalls" totalMilliseconds="37" invocations="50" avgMicrosecondsPerInvocation="757" maxMicrosecondsPerInvocation="8365" standardDeviationMicrosecondsPerInvocation="1730"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.scala.PlayUnvalidatedRedirectDetector" totalMilliseconds="37" invocations="50" avgMicrosecondsPerInvocation="751" maxMicrosecondsPerInvocation="8433" standardDeviationMicrosecondsPerInvocation="1840"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref" totalMilliseconds="37" invocations="50" avgMicrosecondsPerInvocation="747" maxMicrosecondsPerInvocation="8258" standardDeviationMicrosecondsPerInvocation="1428"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.SuspiciousLoopSearch" totalMilliseconds="37" invocations="50" avgMicrosecondsPerInvocation="746" maxMicrosecondsPerInvocation="8609" standardDeviationMicrosecondsPerInvocation="2002"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RuntimeExceptionCapture" totalMilliseconds="37" invocations="50" avgMicrosecondsPerInvocation="746" maxMicrosecondsPerInvocation="12457" standardDeviationMicrosecondsPerInvocation="2197"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.xml.XmlDecoderDetector" totalMilliseconds="37" invocations="50" avgMicrosecondsPerInvocation="740" maxMicrosecondsPerInvocation="12237" standardDeviationMicrosecondsPerInvocation="2107"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.Section508Compliance" totalMilliseconds="37" invocations="50" avgMicrosecondsPerInvocation="740" maxMicrosecondsPerInvocation="8537" standardDeviationMicrosecondsPerInvocation="1659"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.NeedlessAutoboxing" totalMilliseconds="36" invocations="50" avgMicrosecondsPerInvocation="739" maxMicrosecondsPerInvocation="12446" standardDeviationMicrosecondsPerInvocation="2120"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.cookie.UrlRewritingDetector" totalMilliseconds="36" invocations="50" avgMicrosecondsPerInvocation="735" maxMicrosecondsPerInvocation="11021" standardDeviationMicrosecondsPerInvocation="2030"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.CommonsStringBuilderToString" totalMilliseconds="36" invocations="50" avgMicrosecondsPerInvocation="730" maxMicrosecondsPerInvocation="12586" standardDeviationMicrosecondsPerInvocation="2213"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.scala.XssMvcApiDetector" totalMilliseconds="36" invocations="50" avgMicrosecondsPerInvocation="729" maxMicrosecondsPerInvocation="8336" standardDeviationMicrosecondsPerInvocation="1976"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.password.HardcodedPasswordEqualsDetector" totalMilliseconds="36" invocations="50" avgMicrosecondsPerInvocation="726" maxMicrosecondsPerInvocation="8222" standardDeviationMicrosecondsPerInvocation="1799"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindHEmismatch" totalMilliseconds="36" invocations="50" avgMicrosecondsPerInvocation="722" maxMicrosecondsPerInvocation="8354" standardDeviationMicrosecondsPerInvocation="1780"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.TailRecursion" totalMilliseconds="35" invocations="50" avgMicrosecondsPerInvocation="718" maxMicrosecondsPerInvocation="8263" standardDeviationMicrosecondsPerInvocation="1898"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.SuboptimalExpressionOrder" totalMilliseconds="35" invocations="50" avgMicrosecondsPerInvocation="717" maxMicrosecondsPerInvocation="8966" standardDeviationMicrosecondsPerInvocation="1776"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.xml.StdXmlTransformDetector" totalMilliseconds="34" invocations="50" avgMicrosecondsPerInvocation="698" maxMicrosecondsPerInvocation="11805" standardDeviationMicrosecondsPerInvocation="1908"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.ConfusingArrayAsList" totalMilliseconds="34" invocations="50" avgMicrosecondsPerInvocation="697" maxMicrosecondsPerInvocation="9952" standardDeviationMicrosecondsPerInvocation="2225"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.android.BroadcastDetector" totalMilliseconds="34" invocations="50" avgMicrosecondsPerInvocation="694" maxMicrosecondsPerInvocation="10347" standardDeviationMicrosecondsPerInvocation="1964"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.CustomBuiltXML" totalMilliseconds="34" invocations="50" avgMicrosecondsPerInvocation="691" maxMicrosecondsPerInvocation="16314" standardDeviationMicrosecondsPerInvocation="2412"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDerefsInvolvingNonShortCircuitEvaluation" totalMilliseconds="34" invocations="50" avgMicrosecondsPerInvocation="690" maxMicrosecondsPerInvocation="8583" standardDeviationMicrosecondsPerInvocation="1941"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

@@ -1,0 +1,440 @@
+Project Dependencies Analysis Report
+
+Scanned Project Path: /home/th2888/cs6156/SANGRIA/service-operation/
+
+Dependency Analysis Found Vulnerabilities Summary:
+
+MEDIUM    4
+LOW    9
+CRITICAL    3
+
+Found Vulnerabilities Detail Information:
+
+1.
+ID: CVE-2022-22965
+Package Name: org.springframework:spring-beans
+CVSS Score (A higher score indicates higher severity): 2.0
+Severity: LOW
+Related Urls: 
+1.https://nvd.nist.gov/vuln/detail/CVE-2022-22965
+2.https://github.com/spring-projects/spring-framework/commit/002546b3e4b8d791ea6acccb81eb3168f51abb15
+3.https://github.com/spring-projects/spring-boot/releases/tag/v2.5.12
+4.https://github.com/spring-projects/spring-boot/releases/tag/v2.6.6
+5.https://github.com/spring-projects/spring-framework/releases/tag/v5.2.20.RELEASE
+6.https://github.com/spring-projects/spring-framework/releases/tag/v5.3.18
+7.https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement
+8.https://tanzu.vmware.com/security/cve-2022-22965
+9.https://github.com/spring-projects/spring-framework
+Threat Description: 
+# Remote Code Execution in Spring Framework
+Spring Framework prior to versions 5.2.20 and 5.3.18 contains a remote code execution vulnerability known as `Spring4Shell`. 
+
+## Impact
+
+A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it.
+
+These are the prerequisites for the exploit:
+- JDK 9 or higher
+- Apache Tomcat as the Servlet container
+- Packaged as WAR
+- `spring-webmvc` or `spring-webflux` dependency
+
+## Patches
+
+- Spring Framework [5.3.18](https://github.com/spring-projects/spring-framework/releases/tag/v5.3.18) and [5.2.20](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.20.RELEASE)
+- Spring Boot [2.6.6](https://github.com/spring-projects/spring-boot/releases/tag/v2.6.6) and [2.5.12](https://github.com/spring-projects/spring-boot/releases/tag/v2.5.12)
+
+## Workarounds
+
+For those who are unable to upgrade, leaked reports recommend setting `disallowedFields` on `WebDataBinder` through an `@ControllerAdvice`. This works generally, but as a centrally applied workaround fix, may leave some loopholes, in particular if a controller sets `disallowedFields` locally through its own `@InitBinder` method, which overrides the global setting.
+
+To apply the workaround in a more fail-safe way, applications could extend `RequestMappingHandlerAdapter` to update the `WebDataBinder` at the end after all other initialization. In order to do that, a Spring Boot application can declare a `WebMvcRegistrations` bean (Spring MVC) or a `WebFluxRegistrations` bean (Spring WebFlux).
+
+            
+
+2.
+ID: CVE-2022-22950
+Package Name: org.springframework:spring-core
+CVSS Score (A higher score indicates higher severity): 2.0
+Severity: LOW
+Related Urls: 
+1.https://nvd.nist.gov/vuln/detail/CVE-2022-22950
+2.https://tanzu.vmware.com/security/cve-2022-22950
+Threat Description: 
+# Allocation of Resources Without Limits or Throttling in Spring Framework
+In Spring Framework versions 5.3.0 - 5.3.16, 5.2.0 - 5.2.19, and older unsupported versions, it is possible for a user to provide a specially crafted SpEL expression that may cause a denial of service condition.
+
+            
+
+3.
+ID: CVE-2020-36518
+Package Name: com.fasterxml.jackson.core:jackson-databind
+CVSS Score (A higher score indicates higher severity): 2.0
+Severity: LOW
+Related Urls: 
+1.https://nvd.nist.gov/vuln/detail/CVE-2020-36518
+2.https://github.com/FasterXML/jackson-databind/issues/2816
+3.https://github.com/FasterXML/jackson-databind/commit/fcfc4998ec23f0b1f7f8a9521c2b317b6c25892b
+4.https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12
+5.https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13
+6.https://github.com/FasterXML/jackson-databind
+Threat Description: 
+# Deeply nested json in jackson-databind
+jackson-databind is a data-binding package for the Jackson Data Processor. jackson-databind allows a Java stack overflow exception and denial of service via a large depth of nested objects.
+
+            
+
+4.
+ID: CVE-2021-42550
+Package Name: ch.qos.logback:logback-core
+CVSS Score (A higher score indicates higher severity): 2.0
+Severity: LOW
+Related Urls: 
+1.https://nvd.nist.gov/vuln/detail/CVE-2021-42550
+2.https://github.com/qos-ch/logback/commit/87291079a1de9369ac67e20dc70a8fdc7cc4359c
+3.https://github.com/qos-ch/logback/commit/ef4fc4186b74b45ce80d86833820106ff27edd42
+4.https://github.com/cn-panda/logbackRceDemo
+5.https://github.com/qos-ch/logback/blob/1502cba4c1dfd135b2e715bc0cf80c0045d4d128/logback-site/src/site/pages/news.html
+6.https://jira.qos.ch/browse/LOGBACK-1591
+7.https://security.netapp.com/advisory/ntap-20211229-0001/
+8.http://logback.qos.ch/news.html
+9.https://github.com/qos-ch/logback
+Threat Description: 
+# Deserialization of Untrusted Data in logback
+In logback version 1.2.7 and prior versions, an attacker with the required privileges to edit configurations files could craft a malicious configuration allowing to execute arbitrary code loaded from LDAP servers.
+
+            
+
+5.
+ID: CVE-2021-22060
+Package Name: org.springframework:spring-core
+CVSS Score (A higher score indicates higher severity): 2.0
+Severity: LOW
+Related Urls: 
+1.https://nvd.nist.gov/vuln/detail/CVE-2021-22060
+2.https://tanzu.vmware.com/security/cve-2021-22060
+3.https://www.oracle.com/security-alerts/cpuapr2022.html
+Threat Description: 
+# Log entry injection in Spring Framework
+In Spring Framework versions 5.3.0 - 5.3.13, 5.2.0 - 5.2.18, and older unsupported versions, it is possible for a user to provide malicious input to cause the insertion of additional log entries. This is a follow-up to CVE-2021-22096 that protects against additional types of input and in more places of the Spring Framework codebase.
+
+            
+
+6.
+ID: CVE-2022-23181
+Package Name: org.apache.tomcat.embed:tomcat-embed-core
+CVSS Score (A higher score indicates higher severity): 2.0
+Severity: LOW
+Related Urls: 
+1.https://nvd.nist.gov/vuln/detail/CVE-2022-23181
+2.https://lists.apache.org/thread/l8x62p3k19yfcb208jo4zrb83k5mfwg9
+3.https://security.netapp.com/advisory/ntap-20220217-0010/
+4.https://www.oracle.com/security-alerts/cpuapr2022.html
+5.https://github.com/apache/tomcat
+Threat Description: 
+# Race condition in Apache Tomcat
+The fix for bug CVE-2020-9484 introduced a time of check time of use vulnerability into Apache Tomcat 10.1.0-M1 to 10.1.0-M8, 10.0.0-M5 to 10.0.14, 9.0.35 to 9.0.56 and 8.5.55 to 8.5.73 that allowed a local attacker to perform actions with the privileges of the user that the Tomcat process is using. This issue is only exploitable when Tomcat is configured to persist sessions using the FileStore.
+
+            
+
+7.
+ID: CVE-2022-22968
+Package Name: org.springframework:spring-core
+CVSS Score (A higher score indicates higher severity): 2.0
+Severity: LOW
+Related Urls: 
+1.https://nvd.nist.gov/vuln/detail/CVE-2022-22968
+2.https://tanzu.vmware.com/security/cve-2022-22968
+3.https://github.com/spring-projects/spring-framework
+Threat Description: 
+# Improper handling of case sensitivity in Spring Framework
+In Spring Framework versions 5.3.0 - 5.3.18, 5.2.0 - 5.2.20, and older unsupported versions, the patterns for disallowedFields on a DataBinder are case sensitive which means a field is not effectively protected unless it is listed with both upper and lower case for the first character of the field, including upper and lower case for the first character of all nested fields within the property path. Versions 5.3.19 and 5.2.21 contain a patch for this issue.
+
+            
+
+8.
+ID: CVE-2017-18349
+Package Name: com.alibaba:fastjson
+CVSS Score (A higher score indicates higher severity): 2.0
+Severity: LOW
+Related Urls: 
+1.https://nvd.nist.gov/vuln/detail/CVE-2017-18349
+2.https://github.com/pippo-java/pippo/issues/466
+3.https://fortiguard.com/encyclopedia/ips/44059
+4.https://github.com/advisories/GHSA-xjrr-xv9m-4pw5
+5.https://github.com/alibaba/fastjson/wiki/security_update_20170315
+6.https://github.com/alibaba/fastjson
+Threat Description: 
+# High severity vulnerability that affects com.alibaba:fastjson
+parseObject in Fastjson before 1.2.25, as used in FastjsonEngine in Pippo 1.11.0 and other products, allows remote attackers to execute arbitrary code via a crafted JSON request, as demonstrated by a crafted rmi:// URI in the dataSourceName field of HTTP POST data to the Pippo /json URI, which is mishandled in AjaxApplication.java.
+
+            
+
+9.
+ID: CVE-2021-44228
+Package Name: org.apache.logging.log4j:log4j-api
+CVSS Score (A higher score indicates higher severity): 10.0
+Severity: CRITICAL
+Related Urls: 
+1.https://logging.apache.org/log4j/2.x/security.html
+2.http://www.openwall.com/lists/oss-security/2021/12/10/1
+3.http://www.openwall.com/lists/oss-security/2021/12/10/2
+4.http://packetstormsecurity.com/files/165225/Apache-Log4j2-2.14.1-Remote-Code-Execution.html
+5.https://security.netapp.com/advisory/ntap-20211210-0007/
+6.https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd
+7.http://www.openwall.com/lists/oss-security/2021/12/10/3
+8.https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0032
+9.https://www.oracle.com/security-alerts/alert-cve-2021-44228.html
+10.https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VU57UJDCFIASIO35GC55JMKSRXJMCDFM/
+11.http://www.openwall.com/lists/oss-security/2021/12/13/1
+12.http://www.openwall.com/lists/oss-security/2021/12/13/2
+13.https://twitter.com/kurtseifried/status/1469345530182455296
+14.https://lists.debian.org/debian-lts-announce/2021/12/msg00007.html
+15.https://www.debian.org/security/2021/dsa-5020
+16.https://cert-portal.siemens.com/productcert/pdf/ssa-661247.pdf
+17.http://packetstormsecurity.com/files/165270/Apache-Log4j2-2.14.1-Remote-Code-Execution.html
+18.http://packetstormsecurity.com/files/165260/VMware-Security-Advisory-2021-0028.html
+19.http://packetstormsecurity.com/files/165261/Apache-Log4j2-2.14.1-Information-Disclosure.html
+20.http://www.openwall.com/lists/oss-security/2021/12/14/4
+21.https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00646.html
+22.https://www.kb.cert.org/vuls/id/930724
+23.http://packetstormsecurity.com/files/165282/Log4j-Payload-Generator.html
+24.http://packetstormsecurity.com/files/165281/Log4j2-Log4Shell-Regexes.html
+25.http://packetstormsecurity.com/files/165306/L4sh-Log4j-Remote-Code-Execution.html
+26.http://packetstormsecurity.com/files/165307/Log4j-Remote-Code-Execution-Word-Bypassing.html
+27.http://packetstormsecurity.com/files/165311/log4j-scan-Extensive-Scanner.html
+28.http://www.openwall.com/lists/oss-security/2021/12/15/3
+29.https://cert-portal.siemens.com/productcert/pdf/ssa-714170.pdf
+30.https://msrc-blog.microsoft.com/2021/12/11/microsofts-response-to-cve-2021-44228-apache-log4j2/
+31.https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd
+32.https://cert-portal.siemens.com/productcert/pdf/ssa-479842.pdf
+33.http://packetstormsecurity.com/files/165371/VMware-Security-Advisory-2021-0028.4.html
+34.https://cert-portal.siemens.com/productcert/pdf/ssa-397453.pdf
+35.http://packetstormsecurity.com/files/165532/Log4Shell-HTTP-Header-Injection.html
+36.https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/M5CSVUNV4HWZZXGOKNSK6L7RPM7BOKIB/
+37.https://github.com/cisagov/log4j-affected-db/blob/develop/SOFTWARE-LIST.md
+38.http://packetstormsecurity.com/files/165642/VMware-vCenter-Server-Unauthenticated-Log4Shell-JNDI-Injection-Remote-Code-Execution.html
+39.http://packetstormsecurity.com/files/165673/UniFi-Network-Application-Unauthenticated-Log4Shell-Remote-Code-Execution.html
+40.https://www.oracle.com/security-alerts/cpujan2022.html
+41.https://github.com/cisagov/log4j-affected-db
+42.https://www.bentley.com/en/common-vulnerability-exposure/be-2022-0001
+43.https://support.apple.com/kb/HT213189
+44.http://seclists.org/fulldisclosure/2022/Mar/23
+45.https://www.oracle.com/security-alerts/cpuapr2022.html
+Threat Description: 
+Apache Log4j2 2.0-beta9 through 2.15.0 (excluding security releases 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled. From log4j 2.15.0, this behavior has been disabled by default. From version 2.16.0 (along with 2.12.2, 2.12.3, and 2.3.1), this functionality has been completely removed. Note that this vulnerability is specific to log4j-core and does not affect log4net, log4cxx, or other Apache Logging Services projects.
+
+10.
+ID: CVE-2021-44832
+Package Name: org.apache.logging.log4j:log4j-api
+CVSS Score (A higher score indicates higher severity): 6.6
+Severity: MEDIUM
+Related Urls: 
+1.https://lists.apache.org/thread/s1o5vlo78ypqxnzn6p8zf6t9shtq5143
+2.https://issues.apache.org/jira/browse/LOG4J2-3293
+3.http://www.openwall.com/lists/oss-security/2021/12/28/1
+4.https://cert-portal.siemens.com/productcert/pdf/ssa-784507.pdf
+5.https://lists.debian.org/debian-lts-announce/2021/12/msg00036.html
+6.https://security.netapp.com/advisory/ntap-20220104-0001/
+7.https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/T57MPJUW3MA6QGWZRTMCHHMMPQNVKGFC/
+8.https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EVV25FXL4FU5X6X5BSL7RLQ7T6F65MRA/
+9.https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd
+10.https://www.oracle.com/security-alerts/cpujan2022.html
+11.https://www.oracle.com/security-alerts/cpuapr2022.html
+Threat Description: 
+Apache Log4j2 versions 2.0-beta7 through 2.17.0 (excluding security fix releases 2.3.2 and 2.12.4) are vulnerable to a remote code execution (RCE) attack when a configuration uses a JDBC Appender with a JNDI LDAP data source URI when an attacker has control of the target LDAP server. This issue is fixed by limiting JNDI data source names to the java protocol in Log4j2 versions 2.17.1, 2.12.4, and 2.3.2.
+
+11.
+ID: CVE-2021-45046
+Package Name: org.apache.logging.log4j:log4j-api
+CVSS Score (A higher score indicates higher severity): 9.0
+Severity: CRITICAL
+Related Urls: 
+1.http://www.openwall.com/lists/oss-security/2021/12/14/4
+2.https://logging.apache.org/log4j/2.x/security.html
+3.https://www.cve.org/CVERecord?id=CVE-2021-44228
+4.https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00646.html
+5.https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd
+6.http://www.openwall.com/lists/oss-security/2021/12/15/3
+7.https://cert-portal.siemens.com/productcert/pdf/ssa-661247.pdf
+8.https://www.kb.cert.org/vuls/id/930724
+9.https://cert-portal.siemens.com/productcert/pdf/ssa-714170.pdf
+10.https://www.debian.org/security/2021/dsa-5022
+11.https://www.oracle.com/security-alerts/alert-cve-2021-44228.html
+12.https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0032
+13.http://www.openwall.com/lists/oss-security/2021/12/18/1
+14.https://cert-portal.siemens.com/productcert/pdf/ssa-397453.pdf
+15.https://cert-portal.siemens.com/productcert/pdf/ssa-479842.pdf
+16.https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/EOKPQGV24RRBBI4TBZUDQMM4MEH7MXCY/
+17.https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SIG7FZULMNK2XF6FZRU4VWYDQXNMUGAJ/
+18.https://www.oracle.com/security-alerts/cpujan2022.html
+19.https://www.oracle.com/security-alerts/cpuapr2022.html
+Threat Description: 
+It was found that the fix to address CVE-2021-44228 in Apache Log4j 2.15.0 was incomplete in certain non-default configurations. This could allows attackers with control over Thread Context Map (MDC) input data when the logging configuration uses a non-default Pattern Layout with either a Context Lookup (for example, $${ctx:loginId}) or a Thread Context Map pattern (%X, %mdc, or %MDC) to craft malicious input data using a JNDI Lookup pattern resulting in an information leak and remote code execution in some environments and local code execution in all environments. Log4j 2.16.0 (Java 8) and 2.12.2 (Java 7) fix this issue by removing support for message lookup patterns and disabling JNDI functionality by default.
+
+12.
+ID: CVE-2021-45105
+Package Name: org.apache.logging.log4j:log4j-api
+CVSS Score (A higher score indicates higher severity): 5.9
+Severity: MEDIUM
+Related Urls: 
+1.https://logging.apache.org/log4j/2.x/security.html
+2.https://security.netapp.com/advisory/ntap-20211218-0001/
+3.http://www.openwall.com/lists/oss-security/2021/12/19/1
+4.https://www.debian.org/security/2021/dsa-5024
+5.https://www.zerodayinitiative.com/advisories/ZDI-21-1541/
+6.https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-apache-log4j-qRuKNEbd
+7.https://cert-portal.siemens.com/productcert/pdf/ssa-501673.pdf
+8.https://www.kb.cert.org/vuls/id/930724
+9.https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2021-0032
+10.https://cert-portal.siemens.com/productcert/pdf/ssa-479842.pdf
+11.https://www.oracle.com/security-alerts/cpujan2022.html
+12.https://www.oracle.com/security-alerts/cpuapr2022.html
+Threat Description: 
+Apache Log4j2 versions 2.0-alpha1 through 2.16.0 (excluding 2.12.3 and 2.3.1) did not protect from uncontrolled recursion from self-referential lookups. This allows an attacker with control over Thread Context Map data to cause a denial of service when a crafted string is interpreted. This issue was fixed in Log4j 2.17.0, 2.12.3, and 2.3.1.
+
+13.
+ID: CVE-2020-8908
+Package Name: com.google.guava:guava
+CVSS Score (A higher score indicates higher severity): 3.3
+Severity: LOW
+Related Urls: 
+1.https://github.com/google/guava/commit/fec0dbc4634006a6162cfd4d0d09c962073ddf40
+2.https://github.com/google/guava/issues/4011
+3.https://snyk.io/vuln/SNYK-JAVA-COMGOOGLEGUAVA-1015415
+4.https://lists.apache.org/thread.html/r215b3d50f56faeb2f9383505f3e62faa9f549bb23e8a9848b78a968e@%3Ccommits.ws.apache.org%3E
+5.https://lists.apache.org/thread.html/r68d86f4b06c808204f62bcb254fcb5b0432528ee8d37a07ef4bc8222@%3Ccommits.ws.apache.org%3E
+6.https://lists.apache.org/thread.html/r4776f62dfae4a0006658542f43034a7fc199350e35a66d4e18164ee6@%3Ccommits.cxf.apache.org%3E
+7.https://lists.apache.org/thread.html/rb8c0f1b7589864396690fe42a91a71dea9412e86eec66dc85bbacaaf@%3Ccommits.cxf.apache.org%3E
+8.https://lists.apache.org/thread.html/rbc7642b9800249553f13457e46b813bea1aec99d2bc9106510e00ff3@%3Ctorque-dev.db.apache.org%3E
+9.https://lists.apache.org/thread.html/r841c5e14e1b55281523ebcde661ece00b38a0569e00ef5e12bd5f6ba@%3Cissues.maven.apache.org%3E
+10.https://lists.apache.org/thread.html/rc2dbc4633a6eea1fcbce6831876cfa17b73759a98c65326d1896cb1a@%3Ctorque-dev.db.apache.org%3E
+11.https://lists.apache.org/thread.html/rd5d58088812cf8e677d99b07f73c654014c524c94e7fedbdee047604@%3Ctorque-dev.db.apache.org%3E
+12.https://lists.apache.org/thread.html/r3c3b33ee5bef0c67391d27a97cbfd89d44f328cf072b601b58d4e748@%3Ccommits.pulsar.apache.org%3E
+13.https://lists.apache.org/thread.html/rfc27e2727a20a574f39273e0432aa97486a332f9b3068f6ac1346594@%3Cdev.myfaces.apache.org%3E
+14.https://lists.apache.org/thread.html/rd01f5ff0164c468ec7abc96ff7646cea3cce6378da2e4aa29c6bcb95@%3Cgithub.arrow.apache.org%3E
+15.https://www.oracle.com/security-alerts/cpuApr2021.html
+16.https://lists.apache.org/thread.html/r2fe45d96eea8434b91592ca08109118f6308d60f6d0e21d52438cfb4@%3Cdev.drill.apache.org%3E
+17.https://lists.apache.org/thread.html/r07ed3e4417ad043a27bee7bb33322e9bfc7d7e6d1719b8e3dfd95c14@%3Cdev.drill.apache.org%3E
+18.https://lists.apache.org/thread.html/r6874dfe26eefc41b7c9a5e4a0487846fc4accf8c78ff948b24a1104a@%3Cdev.drill.apache.org%3E
+19.https://lists.apache.org/thread.html/r161b87f8037bbaff400194a63cd2016c9a69f5949f06dcc79beeab54@%3Cdev.drill.apache.org%3E
+20.https://www.oracle.com//security-alerts/cpujul2021.html
+21.https://lists.apache.org/thread.html/r58a8775205ab1839dba43054b09a9ab3b25b423a4170b2413c4067ac@%3Ccommon-issues.hadoop.apache.org%3E
+22.https://lists.apache.org/thread.html/ra7ab308481ee729f998691e8e3e02e93b1dedfc98f6b1cd3d86923b3@%3Cyarn-issues.hadoop.apache.org%3E
+23.https://lists.apache.org/thread.html/rf00b688ffa620c990597f829ff85fdbba8bf73ee7bfb34783e1f0d4e@%3Cyarn-dev.hadoop.apache.org%3E
+24.https://lists.apache.org/thread.html/re120f6b3d2f8222121080342c5801fdafca2f5188ceeb3b49c8a1d27@%3Cyarn-issues.hadoop.apache.org%3E
+25.https://lists.apache.org/thread.html/r79e47ed555bdb1180e528420a7a2bb898541367a29a3bc6bbf0baf2c@%3Cissues.hive.apache.org%3E
+26.https://lists.apache.org/thread.html/r294be9d31c0312d2c0837087204b5d4bf49d0552890e6eec716fa6a6@%3Cyarn-issues.hadoop.apache.org%3E
+27.https://lists.apache.org/thread.html/rb2364f4cf4d274eab5a7ecfaf64bf575cedf8b0173551997c749d322@%3Cgitbox.hive.apache.org%3E
+28.https://lists.apache.org/thread.html/r007add131977f4f576c232b25e024249a3d16f66aad14a4b52819d21@%3Ccommon-issues.hadoop.apache.org%3E
+29.https://lists.apache.org/thread.html/reebbd63c25bc1a946caa419cec2be78079f8449d1af48e52d47c9e85@%3Cissues.geode.apache.org%3E
+30.https://lists.apache.org/thread.html/rd2704306ec729ccac726e50339b8a8f079515cc29ccb77713b16e7c5@%3Cissues.hive.apache.org%3E
+31.https://lists.apache.org/thread.html/r5d61b98ceb7bba939a651de5900dbd67be3817db6bfcc41c6e04e199@%3Cyarn-issues.hadoop.apache.org%3E
+32.https://lists.apache.org/thread.html/rf9f0fa84b8ae1a285f0210bafec6de2a9eba083007d04640b82aa625@%3Cissues.geode.apache.org%3E
+33.https://lists.apache.org/thread.html/r7b0e81d8367264d6cad98766a469d64d11248eb654417809bfdacf09@%3Cyarn-issues.hadoop.apache.org%3E
+34.https://lists.apache.org/thread.html/r49549a8322f62cd3acfa4490d25bfba0be04f3f9ff4d14fe36199d27@%3Cyarn-dev.hadoop.apache.org%3E
+35.https://lists.apache.org/thread.html/rcafc3a637d82bdc9a24036b2ddcad1e519dd0e6f848fcc3d606fd78f@%3Cdev.hive.apache.org%3E
+36.https://lists.apache.org/thread.html/r5b3d93dfdfb7708e796e8762ab40edbde8ff8add48aba53e5ea26f44@%3Cissues.geode.apache.org%3E
+37.https://lists.apache.org/thread.html/r3dd8881de891598d622227e9840dd7c2ef1d08abbb49e9690c7ae1bc@%3Cissues.geode.apache.org%3E
+38.https://lists.apache.org/thread.html/rc607bc52f3507b8b9c28c6a747c3122f51ac24afe80af2a670785b97@%3Cissues.geode.apache.org%3E
+39.https://www.oracle.com/security-alerts/cpuoct2021.html
+40.https://lists.apache.org/thread.html/rd7e12d56d49d73e2b8549694974b07561b79b05455f7f781954231bf@%3Cdev.pig.apache.org%3E
+41.https://www.oracle.com/security-alerts/cpujan2022.html
+42.https://security.netapp.com/advisory/ntap-20220210-0003/
+43.https://www.oracle.com/security-alerts/cpuapr2022.html
+Threat Description: 
+A temp directory creation vulnerability exists in all versions of Guava, allowing an attacker with access to the machine to potentially access data in a temporary directory created by the Guava API com.google.common.io.Files.createTempDir(). By default, on unix-like systems, the created directory is world-readable (readable by an attacker with access to the system). The method in question has been marked @Deprecated in versions 30.0 and later and should not be used. For Android developers, we recommend choosing a temporary directory API provided by Android, such as context.getCacheDir(). For other Java developers, we recommend migrating to the Java 7 API java.nio.file.Files.createTempDirectory() which explicitly configures permissions of 700, or configuring the Java runtime's java.io.tmpdir system property to point to a location whose permissions are appropriately configured.
+
+14.
+ID: CVE-2019-17495
+Package Name: io.springfox:springfox-swagger2
+CVSS Score (A higher score indicates higher severity): 9.8
+Severity: CRITICAL
+Related Urls: 
+1.https://github.com/tarantula-team/CSS-injection-in-Swagger-UI
+2.https://github.com/swagger-api/swagger-ui/releases/tag/v3.23.11
+3.https://www.oracle.com/security-alerts/cpuoct2020.html
+4.https://www.oracle.com/security-alerts/cpuApr2021.html
+5.https://lists.apache.org/thread.html/r3acb7e494cf1aab99b6784b7c5bbddfd0d4f8a484ab534c3a61ef9cf@%3Ccommits.airflow.apache.org%3E
+6.https://lists.apache.org/thread.html/r103579b01da2d0aa0f672b88f811224bbf8ef493aaad845895955e91@%3Ccommits.airflow.apache.org%3E
+7.https://lists.apache.org/thread.html/ref70b940c4f69560d29d6ba792d6c82865e74de3dcad4c92d99b1f8f@%3Ccommits.airflow.apache.org%3E
+8.https://lists.apache.org/thread.html/r853ffeb915a400f899de78124d4e0d77a19379d2e11bf8f4e98c624f@%3Ccommits.airflow.apache.org%3E
+9.https://lists.apache.org/thread.html/r84b327f7a8b6b28857b906c07a66dd98e1d341191fa8d7816514ef96@%3Ccommits.airflow.apache.org%3E
+10.https://www.oracle.com/security-alerts/cpujan2022.html
+Threat Description: 
+A Cascading Style Sheets (CSS) injection vulnerability in Swagger UI before 3.23.11 allows attackers to use the Relative Path Overwrite (RPO) technique to perform CSS-based input field value exfiltration, such as exfiltration of a CSRF token value. In other words, this product intentionally allows the embedding of untrusted JSON data from remote servers, but it was not previously known that <style>@import within the JSON data was a functional attack method.
+
+15.
+ID: CVE-2018-10237
+Package Name: com.google.guava:guava
+CVSS Score (A higher score indicates higher severity): 5.9
+Severity: MEDIUM
+Related Urls: 
+1.https://groups.google.com/d/topic/guava-announce/xqWALw4W1vs/discussion
+2.https://access.redhat.com/errata/RHSA-2018:2428
+3.https://access.redhat.com/errata/RHSA-2018:2425
+4.https://access.redhat.com/errata/RHSA-2018:2424
+5.https://access.redhat.com/errata/RHSA-2018:2423
+6.https://access.redhat.com/errata/RHSA-2018:2598
+7.https://access.redhat.com/errata/RHSA-2018:2643
+8.https://access.redhat.com/errata/RHSA-2018:2743
+9.https://access.redhat.com/errata/RHSA-2018:2742
+10.https://access.redhat.com/errata/RHSA-2018:2741
+11.https://access.redhat.com/errata/RHSA-2018:2740
+12.http://www.securitytracker.com/id/1041707
+13.https://access.redhat.com/errata/RHSA-2018:2927
+14.https://lists.apache.org/thread.html/cc48fe770c45a74dc3b37ed0817393e0c96701fc49bc431ed922f3cc@%3Chdfs-dev.hadoop.apache.org%3E
+15.https://lists.apache.org/thread.html/19fa48533bc7ea1accf6b12746a74ed888ae6e49a5cf81ae4f807495@%3Ccommon-dev.hadoop.apache.org%3E
+16.https://lists.apache.org/thread.html/ff8dcfe29377088ab655fda9d585dccd5b1f07fabd94ae84fd60a7f8@%3Ccommits.pulsar.apache.org%3E
+17.https://lists.apache.org/thread.html/3ddd79c801edd99c0978e83dbe2168ebd36fd42acfa5dac38fb03dd6@%3Cissues.activemq.apache.org%3E
+18.https://lists.apache.org/thread.html/3d5dbdd92ac9ceaef90e40f78599f9109f2f345252e0ac9d98e7e084@%3Cgitbox.activemq.apache.org%3E
+19.https://lists.apache.org/thread.html/33c6bccfeb7adf644d4d79894ca8f09370be6ed4b20632c2e228d085@%3Ccommits.cassandra.apache.org%3E
+20.https://lists.apache.org/thread.html/053d9ce4d579b02203db18545fee5e33f35f2932885459b74d1e4272@%3Cissues.activemq.apache.org%3E
+21.https://access.redhat.com/errata/RHSA-2019:2858
+22.https://lists.apache.org/thread.html/b0656d359c7d40ec9f39c8cc61bca66802ef9a2a12ee199f5b0c1442@%3Cdev.drill.apache.org%3E
+23.https://access.redhat.com/errata/RHSA-2019:3149
+24.https://lists.apache.org/thread.html/f9bc3e55f4e28d1dcd1a69aae6d53e609a758e34d2869b4d798e13cc@%3Cissues.drill.apache.org%3E
+25.https://lists.apache.org/thread.html/519eb0fd45642dcecd9ff74cb3e71c20a4753f7d82e2f07864b5108f@%3Cdev.drill.apache.org%3E
+26.https://lists.apache.org/thread.html/r27eb79a87a760335226dbfa6a7b7bffea539a535f8e80c41e482106d@%3Cdev.cxf.apache.org%3E
+27.https://lists.apache.org/thread.html/r95799427b335807a4c54776908125c3e66597b65845ae50096d9278a@%3Cdev.cxf.apache.org%3E
+28.https://lists.apache.org/thread.html/rc78f6e84f82cc662860e96526d8ab969f34dbe12dc560e22d9d147a3@%3Cdev.cxf.apache.org%3E
+29.https://lists.apache.org/thread.html/ra0adb9653c7de9539b93cc8434143b655f753b9f60580ff260becb2b@%3Cusers.kafka.apache.org%3E
+30.https://www.oracle.com/security-alerts/cpuapr2020.html
+31.https://lists.apache.org/thread.html/rd0c8ec6e044aa2958dd0549ebf8ecead7f5968c9474ba73a504161b2@%3Cdev.cxf.apache.org%3E
+32.https://lists.apache.org/thread.html/r38e2ab87528d3c904e7fac496e8fd766b9277656ff95b97d6b6b6dcd@%3Cdev.cxf.apache.org%3E
+33.https://lists.apache.org/thread.html/r2ea4e5e5aa8ad73b001a466c582899620961f47d77a40af712c1fdf9@%3Cdev.cxf.apache.org%3E
+34.https://lists.apache.org/thread.html/r43491b25b2e5c368c34b106a82eff910a5cea3e90de82ad75cc16540@%3Cdev.syncope.apache.org%3E
+35.https://lists.apache.org/thread.html/rc8467f357b943ceaa86f289f8bc1a5d1c7955b75d3bac1426f2d4ac1@%3Ccommon-dev.hadoop.apache.org%3E
+36.https://www.oracle.com/security-alerts/cpujul2020.html
+37.https://lists.apache.org/thread.html/r02e39d7beb32eebcdbb4b516e95f67d71c90d5d462b26f4078d21eeb@%3Cuser.flink.apache.org%3E
+38.https://lists.apache.org/thread.html/r02e39d7beb32eebcdbb4b516e95f67d71c90d5d462b26f4078d21eeb@%3Cdev.flink.apache.org%3E
+39.https://lists.apache.org/thread.html/rdc56c15693c236e31e1e95f847b8e5e74fc0a05741d47488e7fc8c45@%3Cissues.flink.apache.org%3E
+40.https://lists.apache.org/thread.html/r50fc0bcc734dd82e691d36d209258683141bfc0083739a77e56ad92d@%3Cdev.flink.apache.org%3E
+41.https://lists.apache.org/thread.html/ra8906723927aef2a599398c238eacfc845b74d812e0093ec2fc70a7d@%3Cissues.flink.apache.org%3E
+42.https://lists.apache.org/thread.html/ra4f44016926dcb034b3b230280a18102062f94ae55b8a31bb92fed84@%3Cissues.lucene.apache.org%3E
+43.https://lists.apache.org/thread.html/rb3da574c34bc6bd37972d2266af3093b90d7e437460423c24f477919@%3Cissues.lucene.apache.org%3E
+44.https://lists.apache.org/thread.html/r223bc776a077d0795786c38cbc6e7dd808fce1a9161b00ba9c0a5d55@%3Cissues.lucene.apache.org%3E
+45.https://www.oracle.com/security-alerts/cpujan2021.html
+46.https://lists.apache.org/thread.html/r841c5e14e1b55281523ebcde661ece00b38a0569e00ef5e12bd5f6ba@%3Cissues.maven.apache.org%3E
+47.https://lists.apache.org/thread.html/r22c8173b804cd4a420c43064ba4e363d0022aa421008b1989f7354d4@%3Cissues.flink.apache.org%3E
+48.https://lists.apache.org/thread.html/r352e40ca9874d1beb4ad95403792adca7eb295e6bc3bd7b65fabcc21@%3Ccommits.samza.apache.org%3E
+49.https://lists.apache.org/thread.html/r30e7d7b6bfa630dacc41649a0e96dad75165d50474c1241068aa0f94@%3Cissues.storm.apache.org%3E
+50.https://lists.apache.org/thread.html/r3c3b33ee5bef0c67391d27a97cbfd89d44f328cf072b601b58d4e748@%3Ccommits.pulsar.apache.org%3E
+51.https://lists.apache.org/thread.html/rd01f5ff0164c468ec7abc96ff7646cea3cce6378da2e4aa29c6bcb95@%3Cgithub.arrow.apache.org%3E
+52.https://www.oracle.com/security-alerts/cpuoct2021.html
+Threat Description: 
+Unbounded memory allocation in Google Guava 11.0 through 24.x before 24.1.1 allows remote attackers to conduct denial of service attacks against servers that depend on this library and deserialize attacker-provided data, because the AtomicDoubleArray class (when serialized with Java serialization) and the CompoundOrdering class (when serialized with GWT serialization) perform eager allocation without appropriate checks on what a client has sent and whether the data size is reasonable.
+
+16.
+ID: CVE-2018-25031
+Package Name: io.springfox:springfox-swagger2
+CVSS Score (A higher score indicates higher severity): 4.3
+Severity: MEDIUM
+Related Urls: 
+1.https://github.com/swagger-api/swagger-ui/issues/4872
+2.https://github.com/swagger-api/swagger-ui/releases/tag/v4.1.3
+3.https://security.snyk.io/vuln/SNYK-JS-SWAGGERUI-2314885
+4.https://security.netapp.com/advisory/ntap-20220407-0004/
+Threat Description: 
+Swagger UI before 4.1.3 could allow a remote attacker to conduct spoofing attacks. By persuading a victim to open a crafted URL, an attacker could exploit this vulnerability to display remote OpenAPI definitions.
+
