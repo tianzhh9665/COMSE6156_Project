@@ -1,1 +1,1 @@
-# COMSE6156_Project
+# projScan-I Tianzhi Huang
