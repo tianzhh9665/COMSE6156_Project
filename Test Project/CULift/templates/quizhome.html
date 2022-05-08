@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'quizhome.js') }}"></script>
+
+<script>
+
+</script>
+
+<div class="container-fluid">
+    <div class='row justify-content-md-center'>
+        <div class="col-md-auto" id="quiz_home_title">
+
+        </div>
+    </div>
+    <div class='row justify-content-md-center'>
+        <div class="col-md-auto" id="quiz_home_des">
+
+        </div>
+    </div>
+    <div class='row justify-content-md-center'>
+        <div class="col-md-auto" id="quiz_home_video">
+            <br><img src="https://gmb.io/wp-content/uploads/2017/10/Ryan-Push-Up.png" alt="quiz home pushup image">
+        </div>
+    </div>
+    <div class='row justify-content-md-center'>
+        <div class="col-md-auto" id="quiz_start">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

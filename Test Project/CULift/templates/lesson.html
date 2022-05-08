@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+
+</style>
+<script type="text/javascript" src="{{ url_for('static', filename = 'lesson.js') }}"></script>
+
+<script>
+    let lesson = {{lesson|tojson}};
+    let lesson_pics = {{lesson_pics|tojson}}
+</script>
+
+<div class="container-fluid">    
+    <div class='row justify-content-md-center'>
+        <div class="col-md-auto" id="lessonTitle">
+
+        </div>
+    </div>
+
+    <div class='row justify-content-md-center'>
+        <div class="col-md-auto" id="lessonContent">
+            
+        </div>
+    </div>
+
+    <div id="handSlider" class="centered">
+
+        <div id = "handPicture" class="centered">
+        </div>
+
+
+        </div>
+    <div id="elbowSlider" class="centered">
+
+        <div id = "elbowPicture" class="centered">
+
+        </div>
+
+
+    </div>
+    <div id="backSlider" class="centered">
+
+        <div id = "backPicture" class="centered">
+
+        </div>
+
+
+    </div>
+
+    <div id="begPushUp" class="centered">
+
+    </div>
+
+    <div id="begPushDown" class="centered">
+
+    </div>
+    <div class='row'>
+        <div class="col-6" align="left" id="prev_lesson">
+
+        </div>
+        <div class="col-6" align="right" id="next_button">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

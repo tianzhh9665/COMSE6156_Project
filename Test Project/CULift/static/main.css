@@ -1,0 +1,20 @@
+#hello_div{
+    padding-top:  10px;
+    padding-bottom:  10px;
+    color: red;
+}
+.welcome-title{
+    padding-top: 15px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+.welcome-content{
+    font-size: large;
+}
+.welcome-image{
+    width: auto;
+    height: 500px;
+}
+.centered{
+    text-align: center;
+}

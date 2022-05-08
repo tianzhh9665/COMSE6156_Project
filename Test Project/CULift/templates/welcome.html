@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+
+</style>
+<script type="text/javascript" src="{{ url_for('static', filename = 'welcome.js') }}"></script>
+
+<div class="container-fluid">
+    <div class='row justify-content-md-center'>
+        <div class="col-md-auto welcome-title" id="welcomeTitle">
+
+        </div>
+    </div>
+    <div class='row justify-content-md-center'>
+        <div class="col-md-auto welcome-content" id="welcomeContent">
+
+        </div>
+    </div>
+    <div class='row justify-content-md-center'>
+        <div class="col-md-auto" id="welcomeImage">
+            
+        </div>
+    </div>
+    <div class='row justify-content-md-center'>
+        <div class="col-md-auto" id="welcomeNext">
+            <br>
+        </div>
+    </div>
+    <div class='row justify-content-md-center'>
+        <div class="col-md-auto" id="buttonDiv">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
