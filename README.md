@@ -113,4 +113,4 @@ chmod +x run.sh
 
 ## Additional Notes
 
-In cases where any error message occurs during the above process, please install additional packages according to the error messages.
+In cases where any error message occurs during above process indicating missing of packages, please install additional packages according to the error messages.
